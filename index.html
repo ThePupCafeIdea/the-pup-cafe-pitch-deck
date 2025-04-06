@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <canvas id="profit-chart"></canvas>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pup Café – Pitch Deck</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -16,7 +15,7 @@
       <img src="assets/logo.png" alt="The Pup Café Logo" class="logo">
       <h1>The Pup Café</h1>
       <p class="tagline">Coffee. Community. Care.</p>
-      <p class="subtitle">A worker-centered, dog-loving café where rescue meets dignity.</p>
+      <p class="subtitle">A revolutionary space where rescue dogs find homes, workers share in success, and the community thrives together.</p>
       <p class="contact">Hunter Harris<br>Email: ThePupCafeIdea@gmail.com<br>@ThePupCafeIdea</p>
     </div>
   </section>
@@ -25,12 +24,12 @@
   <section class="slide">
     <div class="content">
       <h2>Our Mission & Values</h2>
-      <p>At The Pup Café, we believe in:</p>
+      <p>At The Pup Café, we are driven by:</p>
       <ul>
-        <li>Joy</li>
-        <li>Dignity</li>
-        <li>Solidarity</li>
-        <li>Care</li>
+        <li><strong>Joy:</strong> Creating a joyful environment for dogs, workers, and patrons alike.</li>
+        <li><strong>Dignity:</strong> Ensuring fair treatment and respect for all beings involved.</li>
+        <li><strong>Solidarity:</strong> Building a community that supports each other.</li>
+        <li><strong>Care:</strong> Prioritizing the well-being of our dogs and staff.</li>
       </ul>
       <p>Our mission is to create a space where rescue dogs find loving homes, workers are valued and empowered, and the community comes together over great coffee.</p>
     </div>
@@ -40,7 +39,7 @@
   <section class="slide">
     <div class="content">
       <h2>The Problem</h2>
-      <p>Every day, countless rescue dogs remain in shelters, longing for companionship. Simultaneously, service industry workers often face undervaluation and burnout. Communities lack spaces that foster genuine connection and mutual support.</p>
+      <p>Every year, millions of rescue dogs remain in shelters, longing for companionship. Simultaneously, service industry workers often face undervaluation and burnout. Communities lack spaces that foster genuine connection and mutual support.</p>
     </div>
   </section>
 
@@ -85,24 +84,24 @@
       <h2>Ethical Profit Framework</h2>
       <p>We allocate our profits as follows:</p>
       <div class="profit-slider">
-        <label for="dog-care">Dog Care & Adoption (40%)</label>
+        <label for="dog-care">Dog Care & Adoption (<span id="dog-care-value">40%</span>)</label>
         <input type="range" id="dog-care" name="dog-care" min="0" max="100" value="40">
-        <span id="dog-care-value">40%</span>
       </div>
       <div class="profit-slider">
-        <label for="worker-share">Worker Profit Share (30%)</label>
+        <label for="worker-share">Worker Profit Share (<span id="worker-share-value">30%</span>)</label>
         <input type="range" id="worker-share" name="worker-share" min="0" max="100" value="30">
-        <span id="worker-share-value">30%</span>
       </div>
       <div class="profit-slider">
-        <label for="social-good">Social Good Reinvestment (15%)</label>
+        <label for="social-good">Social Good Reinvestment (<span id="social-good-value">15%</span>)</label>
         <input type="range" id="social-good" name="social-good" min="0" max="100" value="15">
-        <span id="social-good-value">15%</span>
       </div>
       <div class="profit-slider">
-        <label for="founder-draw">Founder Draw (5%)</label>
-        <input type="range" id="founder-draw" name="founder-draw" min="0" max="100" value="5">
-        <span id="founder-draw-value">5%</span>
+        <label for="community-initiatives">Community Initiatives (<span id="community-initiatives-value">10%</span>)</label>
+        <input type="range" id="community-initiatives" name="community-initiatives" min="0" max="100" value="10">
+      </div>
+      <div class="profit-slider">
+        <label for="sustainability">Sustainability Efforts (<span id="sustainability-value">5%</span>)</label>
+        <input type="range" id="sustainability" name="sustainability" min="0" max="100" value="5">
       </div>
       <button id="reset-values">Reset to Default</button>
       <canvas id="profit-chart"></canvas>
@@ -110,97 +109,4 @@
   </section>
 
   <!-- Startup Roadmap -->
-  <section class="slide">
-    <div class="content">
-      <h2>Startup Roadmap</h2>
-      <ol>
-        <li>Community Building & Outreach</li>
-        <li>Pop-up Pilot Events</li>
-        <li>First Lease & Soft Launch</li>
-        <li>Full Pup Café Model Implementation</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Startup Cost Estimates -->
-  <section class="slide">
-    <div class="content">
-      <h2>Startup Cost Estimates</h2>
-      <table>
-        <tr>
-          <th>Phase</th>
-          <th>Estimated Cost</th>
-        </tr>
-        <tr>
-          <td>Pop-up Pilot</td>
-          <td>$15,000 – $25,000</td>
-        </tr>
-        <tr>
-          <td>Small Leased Café
-::contentReference[oaicite:0]{index=0}
-         <tr>
-          <td>Small Leased Café</td>
-          <td>$50,000 – $75,000</td>
-        </tr>
-        <tr>
-          <td>Full Dream Café</td>
-          <td>$100,000 – $150,000+</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-
-  <!-- The Ask -->
-  <section class="slide">
-    <div class="content">
-      <h2>What We Need</h2>
-      <ul>
-        <li>Legal & Ethical Advisors (PBC vs LLC, rescue laws)</li>
-        <li>Rescue Organizations & Dog Behaviorists</li>
-        <li>Creative Support (branding, web, photography)</li>
-        <li>Funding Partners (grants, donations, ethical investors)</li>
-        <li>Media & Press Amplification</li>
-      </ul>
-      <p>If you're someone who believes in joy, dignity, and care — we want to hear from you.</p>
-    </div>
-  </section>
-
-  <!-- Connection Map -->
-  <section class="slide">
-    <div class="content">
-      <h2>Connections & Relationships</h2>
-      <h3>💚 Current Allies</h3>
-      <ul>
-        <li>Your mom, your girlfriend, friends – moral and logistical support</li>
-        <li>Jennifer Buesser (Animal Defense Partnership)</li>
-      </ul>
-      <h3>🤝 Wanted Partners</h3>
-      <ul>
-        <li>Local rescue orgs (Dallas-based)</li>
-        <li>Dog trainers and vet techs aligned with care-first ethics</li>
-        <li>Co-op networks and mutual aid projects</li>
-      </ul>
-      <h3>🌱 Dream Connections</h3>
-      <ul>
-        <li>Universities, service dog foundations, public benefit accelerators</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Final Slide -->
-  <section class="slide final-slide">
-    <div class="content">
-      <h2>Let’s Build Something Beautiful</h2>
-      <p>A café where dogs are free, workers are valued, and customers join something meaningful — just by showing up.</p>
-      <p class="cta">
-        📧 ThePupCafeIdea@gmail.com<br>
-        🐾 @ThePupCafeIdea<br>
-        📍 Dallas, TX (Coming Soon)
-      </p>
-    </div>
-  </section>
-
-  <script src="main.js"></script>
-</body>
-</html>
-
+  <section class=" 
