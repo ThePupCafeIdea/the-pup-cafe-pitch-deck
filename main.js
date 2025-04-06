@@ -1,91 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Element references
   const sliders = {
     dogCare: document.getElementById("dog-care"),
     workerShare: document.getElementById("worker-share"),
     socialGood: document.getElementById("social-good"),
-    founderDraw: document.getElementById("founder-draw")
+    communityInitiatives: document.getElementById("community-initiatives"),
+    sustainability: document.getElementById("sustainability")
   };
 
-  const values = {
+  const labels = {
     dogCare: document.getElementById("dog-care-value"),
     workerShare: document.getElementById("worker-share-value"),
     socialGood: document.getElementById("social-good-value"),
-    founderDraw: document.getElementById("founder-draw-value")
+    communityInitiatives: document.getElementById("community-initiatives-value"),
+    sustainability: document.getElementById("sustainability-value")
   };
 
   const defaultValues = {
     dogCare: 40,
     workerShare: 30,
     socialGood: 15,
-    founderDraw: 5
+    communityInitiatives: 10,
+    sustainability: 5
   };
 
-  // Initialize Chart.js
+  // Chart setup
   const ctx = document.getElementById("profit-chart").getContext("2d");
   const profitChart = new Chart(ctx, {
     type: "pie",
     data: {
-      labels: ["Dog Care", "Worker Share", "Social Good", "Founder Draw"],
+      labels: [
+        "Dog Care",
+        "Worker Share",
+        "Social Good",
+        "Community Initiatives",
+        "Sustainability"
+      ],
       datasets: [{
-        data: [
-          defaultValues.dogCare,
-          defaultValues.workerShare,
-          defaultValues.socialGood,
-          defaultValues.founderDraw
+        data: Object.values(defaultValues),
+        backgroundColor: [
+          "#ffda9e", "#a8dadc", "#bde0fe", "#ffd6e0", "#d8f3dc"
         ],
-        backgroundColor: ["#ffda9e", "#a8dadc", "#bde0fe", "#cdb4db"],
-        borderWidth: 1
+        borderColor: "#fff",
+        borderWidth: 2
       }]
     },
     options: {
       responsive: true,
       plugins: {
         legend: {
-          position: "bottom"
+          position: "bottom",
+          labels: {
+            color: "#444",
+            font: { size: 14 }
+          }
         }
       }
     }
   });
 
-  // Update display + chart when sliders change
+  // Update chart + label on slider input
   Object.keys(sliders).forEach(key => {
     sliders[key].addEventListener("input", () => {
-      values[key].textContent = `${sliders[key].value}%`;
+      const value = parseInt(sliders[key].value);
+      labels[key].textContent = `${value}%`;
       updateChart();
     });
   });
 
   function updateChart() {
-    profitChart.data.datasets[0].data = [
-      parseInt(sliders.dogCare.value),
-      parseInt(sliders.workerShare.value),
-      parseInt(sliders.socialGood.value),
-      parseInt(sliders.founderDraw.value)
-    ];
+    const newData = Object.keys(sliders).map(key => parseInt(sliders[key].value));
+    profitChart.data.datasets[0].data = newData;
     profitChart.update();
   }
 
-  // Reset button
+  // Reset values
   document.getElementById("reset-values").addEventListener("click", () => {
-    Object.keys(sliders).forEach(key => {
+    Object.keys(defaultValues).forEach(key => {
       sliders[key].value = defaultValues[key];
-      values[key].textContent = `${defaultValues[key]}%`;
+      labels[key].textContent = `${defaultValues[key]}%`;
     });
     updateChart();
   });
 
-  // Fade-in effect on scroll
-  const fadeSections = document.querySelectorAll(".slide");
-  const observer = new IntersectionObserver((entries, observer) => {
+  // Fade-in scroll animation
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
     });
   }, { threshold: 0.1 });
 
-  fadeSections.forEach(section => {
-    observer.observe(section);
-  });
+  document.querySelectorAll(".slide").forEach(slide => observer.observe(slide));
 });
