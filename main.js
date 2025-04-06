@@ -1,96 +1,85 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sliders = {
-    dogCare: document.getElementById("dog-care"),
-    workerShare: document.getElementById("worker-share"),
-    socialGood: document.getElementById("social-good"),
-    communityInitiatives: document.getElementById("community-initiatives"),
-    sustainability: document.getElementById("sustainability")
-  };
+// Default values
+const defaultValues = {
+  dogCare: 40,
+  workerShare: 30,
+  socialGood: 15,
+  founderDraw: 5
+};
 
-  const labels = {
-    dogCare: document.getElementById("dog-care-value"),
-    workerShare: document.getElementById("worker-share-value"),
-    socialGood: document.getElementById("social-good-value"),
-    communityInitiatives: document.getElementById("community-initiatives-value"),
-    sustainability: document.getElementById("sustainability-value")
-  };
+// Elements
+const dogInput = document.getElementById("dog-care");
+const workerInput = document.getElementById("worker-share");
+const socialInput = document.getElementById("social-good");
+const founderInput = document.getElementById("founder-draw");
 
-  const defaultValues = {
-    dogCare: 40,
-    workerShare: 30,
-    socialGood: 15,
-    communityInitiatives: 10,
-    sustainability: 5
-  };
+const dogValue = document.getElementById("dog-care-value");
+const workerValue = document.getElementById("worker-share-value");
+const socialValue = document.getElementById("social-good-value");
+const founderValue = document.getElementById("founder-draw-value");
 
-  // Chart setup
-  const ctx = document.getElementById("profit-chart").getContext("2d");
-  const profitChart = new Chart(ctx, {
-    type: "pie",
-    data: {
-      labels: [
-        "Dog Care",
-        "Worker Share",
-        "Social Good",
-        "Community Initiatives",
-        "Sustainability"
+const resetBtn = document.getElementById("reset-values");
+
+// Update text labels + chart
+function updateLabels() {
+  dogValue.textContent = `${dogInput.value}%`;
+  workerValue.textContent = `${workerInput.value}%`;
+  socialValue.textContent = `${socialInput.value}%`;
+  founderValue.textContent = `${founderInput.value}%`;
+
+  updateChart();
+}
+
+// Reset to defaults
+resetBtn.addEventListener("click", () => {
+  dogInput.value = defaultValues.dogCare;
+  workerInput.value = defaultValues.workerShare;
+  socialInput.value = defaultValues.socialGood;
+  founderInput.value = defaultValues.founderDraw;
+  updateLabels();
+});
+
+// Event listeners
+[dogInput, workerInput, socialInput, founderInput].forEach(input => {
+  input.addEventListener("input", updateLabels);
+});
+
+// Chart.js setup
+let chart;
+function updateChart() {
+  const data = {
+    labels: ["Dog Care", "Worker Share", "Social Good", "Founder Draw"],
+    datasets: [{
+      data: [
+        parseInt(dogInput.value),
+        parseInt(workerInput.value),
+        parseInt(socialInput.value),
+        parseInt(founderInput.value)
       ],
-      datasets: [{
-        data: Object.values(defaultValues),
-        backgroundColor: [
-          "#ffda9e", "#a8dadc", "#bde0fe", "#ffd6e0", "#d8f3dc"
-        ],
-        borderColor: "#fff",
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "bottom",
-          labels: {
-            color: "#444",
-            font: { size: 14 }
+      backgroundColor: ["#d4a373", "#8ecae6", "#90be6d", "#f28482"]
+    }]
+  };
+
+  if (chart) {
+    chart.data = data;
+    chart.update();
+  } else {
+    const ctx = document.getElementById("profit-chart").getContext("2d");
+    chart = new Chart(ctx, {
+      type: "pie",
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "bottom"
           }
         }
       }
-    }
-  });
-
-  // Update chart + label on slider input
-  Object.keys(sliders).forEach(key => {
-    sliders[key].addEventListener("input", () => {
-      const value = parseInt(sliders[key].value);
-      labels[key].textContent = `${value}%`;
-      updateChart();
     });
-  });
-
-  function updateChart() {
-    const newData = Object.keys(sliders).map(key => parseInt(sliders[key].value));
-    profitChart.data.datasets[0].data = newData;
-    profitChart.update();
   }
+}
 
-  // Reset values
-  document.getElementById("reset-values").addEventListener("click", () => {
-    Object.keys(defaultValues).forEach(key => {
-      sliders[key].value = defaultValues[key];
-      labels[key].textContent = `${defaultValues[key]}%`;
-    });
-    updateChart();
-  });
-
-  // Fade-in scroll animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll(".slide").forEach(slide => observer.observe(slide));
+// Initialize on load
+window.addEventListener("DOMContentLoaded", () => {
+  updateLabels();
 });
