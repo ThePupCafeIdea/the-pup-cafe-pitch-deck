@@ -1,0 +1,91 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  margin-bottom: 0.5em;
+}
+
+ul {
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+section {
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.slide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title-slide {
+  background: #fdf4e3;
+  text-align: center;
+}
+
+.title-slide h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+  color: #8b5e3c;
+}
+
+.title-slide .tagline {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+.final-slide {
+  background: #eafcf1;
+  text-align: center;
+}
+
+.final-slide h2 {
+  color: #2b7a4b;
+}
+
+.final-slide .call {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.note {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 1em;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 40px 15px;
+  }
+
+  .title-slide h1 {
+    font-size: 2.2em;
+  }
+
+  .final-slide .call {
+    font-size: 1em;
+  }
+}
