@@ -166,6 +166,58 @@ table th {
   background: #eafcf1;
 }
 
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  max-width: 550px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #5c4033;
+}
+
+.intro-blurb {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 20px 0;
+  line-height: 1.8;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #8ecae6;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #219ebc;
+}
+
+.hero-art {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.hero-art img {
+  width: 100%;
+  height: auto;
+}
+
+
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 2.2rem;
