@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Financial Evaluations</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <section class="slide financials">
+    <div class="content">
+      <h2>Café Financial Projections</h2>
+      <p>Explore our detailed financial projections for the café operations over the first three years, considering underperforming, average, and overperforming scenarios.</p>
+
+      <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'underperforming')">Underperforming</button>
+        <button class="tab-button" onclick="openTab(event, 'average')">Average</button>
+        <button class="tab-button" onclick="openTab(event, 'overperforming')">Overperforming</button>
+      </div>
+
+      <div id="underperforming" class="tab-content active">
+        <h3>Underperforming Scenario</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Revenue</th>
+              <th>Expenses</th>
+              <th>Net Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>$85,000</td>
+              <td>$95,000</td>
+              <td>-$10,000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>$125,000</td>
+              <td>$130,000</td>
+              <td>-$5,000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>$165,000</td>
+              <td>$160,000</td>
+              <td>$5,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="average" class="tab-content">
+        <h3>Average Scenario</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Revenue</th>
+              <th>Expenses</th>
+              <th>Net Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>$150,000</td>
+              <td>$120,000</td>
+              <td>$30,000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>$210,000</td>
+              <td>$170,000</td>
+              <td>$40,000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>$280,000</td>
+              <td>$220,000</td>
+              <td>$60,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="overperforming" class="tab-content">
+        <h3>Overperforming Scenario</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Revenue</th>
+              <th>Expenses</th>
+              <th>Net Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>$250,000</td>
+              <td>$150,000</td>
+              <td>$100,000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>$320,000</td>
+              <td>$180,000</td>
+              <td>$140,000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>$450,000</td>
+              <td>$220,000</td>
+              <td>$230,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="profitChart"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
 
