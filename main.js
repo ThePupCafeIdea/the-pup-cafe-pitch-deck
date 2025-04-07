@@ -1,85 +1,41 @@
-// Default values
-const defaultValues = {
-  dogCare: 40,
-  workerShare: 30,
-  socialGood: 15,
-  founderDraw: 5
+let chart;
+
+const presets = {
+  default: [40, 30, 15, 5],
+  co_op: [33, 33, 33, 1],
+  survival: [25, 15, 5, 10],
+  grant: [45, 20, 25, 0]
 };
 
-// Elements
-const dogInput = document.getElementById("dog-care");
-const workerInput = document.getElementById("worker-share");
-const socialInput = document.getElementById("social-good");
-const founderInput = document.getElementById("founder-draw");
-
-const dogValue = document.getElementById("dog-care-value");
-const workerValue = document.getElementById("worker-share-value");
-const socialValue = document.getElementById("social-good-value");
-const founderValue = document.getElementById("founder-draw-value");
-
-const resetBtn = document.getElementById("reset-values");
-
-// Update text labels + chart
-function updateLabels() {
-  dogValue.textContent = `${dogInput.value}%`;
-  workerValue.textContent = `${workerInput.value}%`;
-  socialValue.textContent = `${socialInput.value}%`;
-  founderValue.textContent = `${founderInput.value}%`;
-
-  updateChart();
+function updateChart(presetName) {
+  const values = presets[presetName] || presets["default"];
+  chart.data.datasets[0].data = values;
+  chart.update();
 }
 
-// Reset to defaults
-resetBtn.addEventListener("click", () => {
-  dogInput.value = defaultValues.dogCare;
-  workerInput.value = defaultValues.workerShare;
-  socialInput.value = defaultValues.socialGood;
-  founderInput.value = defaultValues.founderDraw;
-  updateLabels();
-});
-
-// Event listeners
-[dogInput, workerInput, socialInput, founderInput].forEach(input => {
-  input.addEventListener("input", updateLabels);
-});
-
-// Chart.js setup
-let chart;
-function updateChart() {
-  const data = {
-    labels: ["Dog Care", "Worker Share", "Social Good", "Founder Draw"],
-    datasets: [{
-      data: [
-        parseInt(dogInput.value),
-        parseInt(workerInput.value),
-        parseInt(socialInput.value),
-        parseInt(founderInput.value)
+document.addEventListener("DOMContentLoaded", () => {
+  const ctx = document.getElementById("profitChart").getContext("2d");
+  chart = new Chart(ctx, {
+    type: "pie",
+    data: {
+      labels: [
+        "Dog Care & Rescue",
+        "Worker Profit Share",
+        "Social Good Investments",
+        "Founder Draw"
       ],
-      backgroundColor: ["#d4a373", "#8ecae6", "#90be6d", "#f28482"]
-    }]
-  };
-
-  if (chart) {
-    chart.data = data;
-    chart.update();
-  } else {
-    const ctx = document.getElementById("profit-chart").getContext("2d");
-    chart = new Chart(ctx, {
-      type: "pie",
-      data: data,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: "bottom"
-          }
+      datasets: [{
+        data: presets.default,
+        backgroundColor: ["#f4a261", "#8ecae6", "#90be6d", "#ffb703"]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "bottom"
         }
       }
-    });
-  }
-}
-
-// Initialize on load
-window.addEventListener("DOMContentLoaded", () => {
-  updateLabels();
+    }
+  });
 });
