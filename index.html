@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Pup Café Pitch Deck</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="deck-nav">
-    <a href="cafe-financials.html" class="cta-button">Café Financials</a>
-    <a href="dog-training-financials.html" class="cta-button">Dog Training Programs</a>
-  </nav>
 
   <!-- Hero Section -->
   <section class="slide title-slide">
     <div class="content">
-      <img src="assets/logo.png" alt="The Pup Café Logo" class="logo">
+      <img src="assets/logo.png" alt="The Pup Café Logo" class="logo" />
       <h1>Welcome to The Pup Café</h1>
       <p class="tagline">Where Dogs and Community Come Together</p>
       <p class="intro-blurb">Join us in creating a space where rescued dogs find loving homes, workers share in the profits, and the community thrives.</p>
@@ -25,7 +21,115 @@
     </div>
   </section>
 
-  <!-- Additional sections (Mission & Values, Problem, Solution, etc.) -->
+  <!-- Mission & Values -->
+  <section id="mission" class="slide mission-values">
+    <div class="content">
+      <h2>Our Mission & Values</h2>
+      <p>At The Pup Café, we believe in creating a harmonious environment where dogs, workers, and the community benefit together.</p>
+      <div class="values-container">
+        <div class="value-item"><img src="assets/icons/joy.png" alt="Joy Icon"><p>Joy</p></div>
+        <div class="value-item"><img src="assets/icons/dignity.png" alt="Dignity Icon"><p>Dignity</p></div>
+        <div class="value-item"><img src="assets/icons/solidarity.png" alt="Solidarity Icon"><p>Solidarity</p></div>
+        <div class="value-item"><img src="assets/icons/work.png" alt="Work Icon"><p>Meaningful Work</p></div>
+        <div class="value-item"><img src="assets/icons/growth.png" alt="Growth Icon"><p>Growth</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="slide problem">
+    <div class="content">
+      <h2>The Challenges We Address</h2>
+      <p>Millions of dogs are euthanized annually, and many workers in the service industry face financial instability.</p>
+      <div class="stats-widget">
+        <div class="stat-item"><h3>3.1M</h3><p>Dogs enter U.S. shelters each year; only half are adopted.</p></div>
+        <div class="stat-item"><h3>80%</h3><p>Service workers report financial insecurity.</p></div>
+        <div class="stat-item"><h3>40%</h3><p>Reduction in cortisol levels after interacting with dogs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="slide solution">
+    <div class="content">
+      <h2>Our Innovative Approach</h2>
+      <p>The Pup Café integrates dog rescue with a community café, providing job opportunities and promoting mental well-being.</p>
+      <div class="solution-graphics">
+        <div class="graphic-item"><img src="assets/graphics/dog-training.png" alt="Dog Training"><p>On-site Dog Training</p></div>
+        <div class="graphic-item"><img src="assets/graphics/community-events.png" alt="Community Events"><p>Community Events</p></div>
+        <div class="graphic-item"><img src="assets/graphics/worker-ownership.png" alt="Worker Ownership"><p>Worker Ownership</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financial Evaluations Section (Café Forward) -->
+  <section class="slide financials">
+    <div class="content">
+      <h2>Café Financial Evaluations</h2>
+      <p>Below are three financial scenarios for the café's performance over the first three years: underperforming, average, and overperforming.</p>
+
+      <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'underperforming')">Underperforming</button>
+        <button class="tab-button" onclick="openTab(event, 'average')">Average</button>
+        <button class="tab-button" onclick="openTab(event, 'overperforming')">Overperforming</button>
+      </div>
+
+      <div id="underperforming" class="tab-content active">
+        <table>
+          <thead><tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Profit</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$85,000</td><td>$95,000</td><td>-$10,000</td></tr>
+            <tr><td>2</td><td>$125,000</td><td>$130,000</td><td>-$5,000</td></tr>
+            <tr><td>3</td><td>$165,000</td><td>$160,000</td><td>$5,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="average" class="tab-content">
+        <table>
+          <thead><tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Profit</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$150,000</td><td>$120,000</td><td>$30,000</td></tr>
+            <tr><td>2</td><td>$210,000</td><td>$170,000</td><td>$40,000</td></tr>
+            <tr><td>3</td><td>$280,000</td><td>$220,000</td><td>$60,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="overperforming" class="tab-content">
+        <table>
+          <thead><tr><th>Year</th><th>Revenue</th><th>Expenses</th><th>Net Profit</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>$250,000</td><td>$150,000</td><td>$100,000</td></tr>
+            <tr><td>2</td><td>$320,000</td><td>$180,000</td><td>$140,000</td></tr>
+            <tr><td>3</td><td>$450,000</td><td>$220,000</td><td>$230,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dog Training & Mission Programs Section -->
+  <section class="slide training-financials">
+    <div class="content">
+      <h2>Dog Training & Nonprofit Financial Evaluation</h2>
+      <p>Our training programs are designed to be affordable, ethical, and accessible. We also support dogs who aren't fit for work through rescue and education-based programs.</p>
+
+      <table>
+        <thead>
+          <tr><th>Program Area</th><th>Estimated Cost</th><th>Revenue / Mission</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dog Training (3–6 months)</td><td>$2,500–$6,000 per dog</td><td>$1,000–$3,500 adoption fee</td></tr>
+          <tr><td>Working Dog Value</td><td>–</td><td>$10,000–$50,000 market value (ours are subsidized)</td></tr>
+          <tr><td>Rescue & Rehome (non-working dogs)</td><td>$800–$1,500</td><td>Mission-aligned / grant-supported</td></tr>
+          <tr><td>Free/Low-Cost Programs</td><td>Staff & space costs</td><td>For veterans, disabled folks, PTSD support</td></tr>
+        </tbody>
+      </table>
+
+      <p>These services are not for profit — they are our mission. Profits from the café support these programs directly, alongside grants and donations.</p>
+    </div>
+  </section>
 
 </body>
 </html>
