@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pup Café Pitch Deck</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav class="deck-nav">
+    <a href="cafe-financials.html" class="cta-button">Café Financials</a>
+    <a href="dog-training-financials.html" class="cta-button">Dog Training Programs</a>
+  </nav>
 
   <!-- Hero Section -->
   <section class="slide title-slide">
@@ -20,144 +25,7 @@
     </div>
   </section>
 
-  <!-- Mission & Values -->
-  <section id="mission" class="slide mission-values">
-    <div class="content">
-      <h2>Our Mission & Values</h2>
-      <p>At The Pup Café, we believe in creating a harmonious environment where dogs, workers, and the community benefit together.</p>
-      <div class="values-container">
-        <div class="value-item">
-          <img src="assets/icons/joy.png" alt="Joy Icon">
-          <p>Joy</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/dignity.png" alt="Dignity Icon">
-          <p>Dignity</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/solidarity.png" alt="Solidarity Icon">
-          <p>Solidarity</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/work.png" alt="Work Icon">
-          <p>Meaningful Work</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/growth.png" alt="Growth Icon">
-          <p>Growth</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Additional sections (Mission & Values, Problem, Solution, etc.) -->
 
-  <!-- Problem Section -->
-  <section class="slide problem">
-    <div class="content">
-      <h2>The Challenges We Address</h2>
-      <p>Millions of dogs are euthanized annually, and many workers in the service industry face financial instability.</p>
-      <div class="stats-widget">
-        <div class="stat-item">
-          <h3>3.1M</h3>
-          <p>Dogs enter U.S. shelters each year; only half are adopted.</p>
-        </div>
-        <div class="stat-item">
-          <h3>80%</h3>
-          <p>Service workers report financial insecurity.</p>
-        </div>
-        <div class="stat-item">
-          <h3>40%</h3>
-          <p>Reduction in cortisol levels after interacting with dogs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="slide solution">
-    <div class="content">
-      <h2>Our Innovative Approach</h2>
-      <p>The Pup Café integrates dog rescue with a community café, providing job opportunities and promoting mental well-being.</p>
-      <div class="solution-graphics">
-        <div class="graphic-item">
-          <img src="assets/graphics/dog-training.png" alt="Dog Training">
-          <p>On-site Dog Training</p>
-        </div>
-        <div class="graphic-item">
-          <img src="assets/graphics/community-events.png" alt="Community Events">
-          <p>Community Events</p>
-        </div>
-        <div class="graphic-item">
-          <img src="assets/graphics/worker-ownership.png" alt="Worker Ownership">
-          <p>Worker Ownership</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shared Value Models -->
-  <section class="slide shared-value">
-    <div class="content">
-      <h2>Our Shared Value Models</h2>
-      <p>We explore various profit-sharing models to ensure sustainability and fairness.</p>
-      <div class="models-container">
-        <div class="model-item">
-          <h3>Default Model</h3>
-          <p>40% to Dog Care, 30% to Workers, 15% to Social Good, 5% to Founder.</p>
-        </div>
-        <div class="model-item">
-          <h3>Co-op Model</h3>
-          <p>33% to Dog Care, 33% to Workers, 33% to Social Good, 1% to Founder.</p>
-        </div>
-        <div class="model-item">
-          <h3>Survival Model</h3>
-          <p>25% to Dog Care, 15% to Workers, 5% to Social Good, 10% to Founder.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profit Distribution -->
-  <section class="slide profit-distribution">
-    <div class="content">
-      <h2>Interactive Profit Distribution</h2>
-      <p>Adjust the sliders to see how profits are allocated.</p>
-      <div class="chart-container">
-        <canvas id="profitChart"></canvas>
-      </div>
-      <div class="preset-options">
-        <button onclick="updateChart('default')">Default</button>
-        <button onclick="updateChart('co_op')">Co-op</button>
-        <button onclick="updateChart('survival')">Survival</button>
-        <button onclick="updateChart('grant')">Grant-Funded</button>
-      </div>
-      <div class="evaluation-panel">
-        <h3>Year 1 Financial Scenarios</h3>
-        <ul>
-          <li><strong>Underperforming:</strong> $90k revenue → small team, reduce founder draw, limited programs.</li>
-          <li><strong>Average:</strong> $150k revenue → full staff, consistent dog care, moderate reinvestment.</li>
-          <li><strong>Overperforming:</strong> $250k+ revenue → expand locations, train more dogs, raise worker dividends.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="slide final-slide">
-    <div class="content">
-      <h2>Join Us in Making a Difference</h2>
-      <p>Be a part of a movement that values dogs, workers
-::contentReference[oaicite:0]{index=0}
-       <p>Be a part of a movement that values dogs, workers, and community above profit.</p>
-      <div class="cta-info">
-        <p>📧 <strong>ThePupCafeIdea@gmail.com</strong></p>
-        <p>🐾 <strong>@ThePupCafeIdea</strong> on all platforms</p>
-        <p>📍 Relocating to Dallas, TX</p>
-      </div>
-      <a class="cta-button" href="mailto:ThePupCafeIdea@gmail.com">Get in Touch</a>
-    </div>
-  </section>
-
-  <script src="main.js"></script>
 </body>
 </html>
-
