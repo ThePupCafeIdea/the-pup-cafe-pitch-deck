@@ -48,3 +48,9 @@ a:hover {
 strong {
   color: #8a4f3d;
 }
+/* Slide-specific background colors */
+.slide-wheat { background-color: #fff5e1; }     /* light wheat */
+.slide-caramel { background-color: #fbe4c7; }   /* warm caramel */
+.slide-hazelnut { background-color: #f5d9c6; }  /* soft nutty tone */
+.slide-maple { background-color: #fce5d4; }     /* maple light brown */
+.slide-cream { background-color: #fdf3ed; }     /* for calm, filler slides */
