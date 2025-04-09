@@ -2,323 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pup Café Pitch Deck</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Chart.js for interactive charts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Our custom script -->
-  <script src="script.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffaf5;
+      color: #3b2f2f;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    h2, h3 {
+      font-weight: 400;
+      margin: 1rem 0;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: #6b4f4f;
+      margin-bottom: 1rem;
+    }
+    .slide-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .footer {
+      font-size: 0.9rem;
+      color: #867272;
+      margin-top: 2rem;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #8a4f3d;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="slide title-slide">
-    <div class="content">
-      <img src="assets/logo.png" alt="The Pup Café Logo" class="logo" />
-      <h1>Welcome to The Pup Café</h1>
-      <p class="tagline">Where Dogs and Community Come Together</p>
-      <p class="intro-blurb">
-        Join us in creating a space where rescued dogs find loving homes, workers share in the profits, and the community thrives. Our model blends ethical business practices with a passion for animal welfare.
-      </p>
-      <a href="#mission" class="cta-button">Learn More</a>
+  <!-- Slide 1 -->
+  <section>
+    <h1>🐾 The Pup Café 🐾</h1>
+    <div class="tagline">a café for dogs, workers & mutual care</div>
+    <h2>
+      Coffee with a mission.<br />
+      Joy without exploitation.<br />
+      A future made of fur, love, and wages.
+    </h2>
+    <div class="footer">
+      Created by [Your Name] — founder, worker, friend of dogs<br />
+      your.email@example.com | @thepupcafeidea
     </div>
   </section>
 
-  <!-- MISSION & VALUES -->
-  <section id="mission" class="slide mission-values">
-    <div class="content">
-      <h2>Our Mission & Values</h2>
-      <p>
-        At The Pup Café, we are dedicated to a model that benefits rescued dogs, supports fair worker profit sharing, and reinvests in social-good programs. We believe in joy, dignity, solidarity, and purposeful work.
-      </p>
-      <div class="values-container">
-        <div class="value-item">
-          <img src="assets/icons/joy.png" alt="Joy Icon">
-          <p>Joy</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/dignity.png" alt="Dignity Icon">
-          <p>Dignity</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/solidarity.png" alt="Solidarity Icon">
-          <p>Solidarity</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/work.png" alt="Meaningful Work Icon">
-          <p>Meaningful Work</p>
-        </div>
-        <div class="value-item">
-          <img src="assets/icons/growth.png" alt="Growth Icon">
-          <p>Growth</p>
-        </div>
-      </div>
-    </div>
+  <!-- Slide 2: The Problem -->
+  <section>
+    <div class="slide-title">The Problem</div>
+    <h3>People are isolated. Dogs are abandoned. Café workers are underpaid.</h3>
+    <p>We live in a system that undervalues care — for animals, for workers, and for each other.</p>
   </section>
 
-  <!-- PROBLEM SECTION -->
-  <section class="slide problem">
-    <div class="content">
-      <h2>The Challenges We Address</h2>
-      <p>
-        Every year, millions of dogs end up in shelters—with only half adopted—while service workers face financial instability. Our model directly addresses these issues by blending a thriving café with dog rescue and ethical business practices.
-      </p>
-      <div class="stats-widget">
-        <div class="stat-item">
-          <h3>3.1M</h3>
-          <p>Dogs enter U.S. shelters annually; adoption rates are too low.</p>
-        </div>
-        <div class="stat-item">
-          <h3>80%</h3>
-          <p>Service workers report financial insecurity.</p>
-        </div>
-        <div class="stat-item">
-          <h3>40%</h3>
-          <p>Reduction in cortisol levels when interacting with dogs.</p>
-        </div>
-      </div>
-    </div>
+  <!-- Slide 3: The Solution -->
+  <section>
+    <div class="slide-title">The Pup Café Solution</div>
+    <p>A joyful, worker-powered café built around rescue dogs, ethical wages, and radical community care.</p>
   </section>
 
-  <!-- SOLUTION SECTION -->
-  <section class="slide solution">
-    <div class="content">
-      <h2>Our Innovative Approach</h2>
-      <p>
-        The Pup Café uniquely integrates dog rescue, ethical worker profit-sharing, and community engagement. Our café is not only a business but a platform for change—where rescued dogs are cherished, workers share in success, and the community experiences transformative benefits.
-      </p>
-      <div class="solution-graphics">
-        <div class="graphic-item">
-          <img src="assets/graphics/dog-training.png" alt="Dog Training">
-          <p>On-site Dog Training</p>
-        </div>
-        <div class="graphic-item">
-          <img src="assets/graphics/community-events.png" alt="Community Events">
-          <p>Community Events</p>
-        </div>
-        <div class="graphic-item">
-          <img src="assets/graphics/worker-ownership.png" alt="Worker Ownership">
-          <p>Worker Ownership</p>
-        </div>
-      </div>
-    </div>
+  <!-- Slide 4: Mission & Model -->
+  <section>
+    <div class="slide-title">Our Mission & Model</div>
+    <p><span class="highlight">50%</span> of profits go to dog rescue.<br>
+       <span class="highlight">30%</span> go to workers beyond wages.<br>
+       <span class="highlight">10-15%</span> to community good.<br>
+       <span class="highlight">1%</span> to sustain the founder.</p>
+    <p>This isn’t a side note. It’s the point.</p>
   </section>
 
-  <!-- CAFE FINANCIAL EVALUATIONS SECTION -->
-  <section class="slide financials">
-    <div class="content">
-      <h2>Café Financial Evaluations</h2>
-      <p>
-        Explore our in-depth financial projections for café operations over the first three years. We present scenarios for underperforming, average, and overperforming outcomes with detailed breakdowns of revenue, expenses, and net profit. Our assumptions include daily customer volume, average spend, labor costs, and operational expenses.
-      </p>
-      <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'underperforming')">Underperforming</button>
-        <button class="tab-button" onclick="openTab(event, 'average')">Average</button>
-        <button class="tab-button" onclick="openTab(event, 'overperforming')">Overperforming</button>
-      </div>
-      
-      <!-- Underperforming Scenario -->
-      <div id="underperforming" class="tab-content active">
-        <h3>Underperforming Scenario (Year 1-3)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Revenue</th>
-              <th>Expenses</th>
-              <th>Net Profit</th>
-              <th>Assumptions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>$85,000</td>
-              <td>$95,000</td>
-              <td>-$10,000</td>
-              <td>Low footfall, high fixed costs</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>$125,000</td>
-              <td>$130,000</td>
-              <td>-$5,000</td>
-              <td>Slight growth, still below target</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>$165,000</td>
-              <td>$160,000</td>
-              <td>$5,000</td>
-              <td>Marginal improvement, operational tweaks needed</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <!-- Average Scenario -->
-      <div id="average" class="tab-content">
-        <h3>Average Scenario (Year 1-3)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Revenue</th>
-              <th>Expenses</th>
-              <th>Net Profit</th>
-              <th>Assumptions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>$150,000</td>
-              <td>$120,000</td>
-              <td>$30,000</td>
-              <td>Steady customer growth, improved margins</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>$210,000</td>
-              <td>$170,000</td>
-              <td>$40,000</td>
-              <td>Optimized operations, increased daily traffic</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>$280,000</td>
-              <td>$220,000</td>
-              <td>$60,000</td>
-              <td>Solid market positioning, recurring customers</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <!-- Overperforming Scenario -->
-      <div id="overperforming" class="tab-content">
-        <h3>Overperforming Scenario (Year 1-3)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Revenue</th>
-              <th>Expenses</th>
-              <th>Net Profit</th>
-              <th>Assumptions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>$250,000</td>
-              <td>$150,000</td>
-              <td>$100,000</td>
-              <td>High customer volume, efficient cost management</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>$320,000</td>
-              <td>$180,000</td>
-              <td>$140,000</td>
-              <td>Strong repeat business, premium offerings</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>$450,000</td>
-              <td>$220,000</td>
-              <td>$230,000</td>
-              <td>Market leader, operational excellence</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Profit Distribution Pie Chart -->
-      <div class="chart-container">
-        <canvas id="profitChart"></canvas>
-        <p class="chart-description">
-          The pie chart below shows our planned profit distribution: a majority reinvested into dog care & rescue, substantial worker profit-sharing, social good investments, and a modest founder draw.
-        </p>
-      </div>
-      
-      <!-- Revenue Bar Chart -->
-      <div class="chart-container">
-        <canvas id="revenueChart"></canvas>
-        <p class="chart-description">
-          This bar chart visualizes our revenue trends over the first three years across the three scenarios.
-        </p>
-      </div>
-    </div>
+  <!-- Slide 5: A Day in the Life -->
+  <section>
+    <div class="slide-title">What It Looks Like</div>
+    <p>A rescued senior dog snoozes under a table. A barista smiles, paid fairly, naming drinks after shelter pups. Someone drops a donation in the jar. The coffee is good. The air smells like fresh-baked kindness.</p>
   </section>
 
-  <!-- DOG TRAINING & NONPROFIT FINANCIAL EVALUATION SECTION -->
-  <section class="slide training-financials">
-    <div class="content">
-      <h2>Dog Training & Nonprofit Financial Evaluation</h2>
-      <p>
-        Our dog training programs are designed to offer high-quality training at subsidized rates. This section breaks down the costs of training, rehoming, and educational outreach for non-working dogs, as well as the social benefits generated by these initiatives.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Program Area</th>
-            <th>Cost / Investment</th>
-            <th>Revenue / Impact</th>
-            <th>Assumptions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Dog Training</td>
-            <td>$2,500–$6,000 per dog</td>
-            <td>$1,000–$3,500 adoption fee (subsidized)</td>
-            <td>Includes trainer wages, housing, food, and veterinary care</td>
-          </tr>
-          <tr>
-            <td>Working Dog Value</td>
-            <td>–</td>
-            <td>$10,000–$50,000 market value*</td>
-            <td>Our sales are set below market value to maximize social impact</td>
-          </tr>
-          <tr>
-            <td>Rescue & Rehoming</td>
-            <td>$800–$1,500 per dog</td>
-            <td>Nonprofit-supported</td>
-            <td>Costs cover medical, foster care, and adoption coordination</td>
-          </tr>
-          <tr>
-            <td>Free/Low-Cost Programs</td>
-            <td>Staff, space, and program costs</td>
-            <td>Enhanced community outreach</td>
-            <td>Focus on vulnerable groups: veterans, PTSD, diabetics, etc.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="detailed-note">
-        *Market values reflect the cost of fully trained service dogs. Our approach is mission-driven: not every dog is expected to "earn" its keep in the traditional sense.
-      </p>
-    </div>
+  <!-- Slide 6: Revenue Model -->
+  <section>
+    <div class="slide-title">How We Make Revenue</div>
+    <p>Coffee & Food. Events. Merch. Passive Donations.</p>
+    <p>Everything modeled, priced, and backed by real café comps.</p>
   </section>
 
-  <!-- THANK YOU WALL SECTION -->
-  <section class="slide final-slide">
-    <div class="content">
-      <h2>Thank You Wall</h2>
-      <p>
-        Our journey is powered by the generosity and support of countless individuals. Check out our live Thank You Wall to see the names of those who have already made a difference.
-      </p>
-      <!-- Option: Embed the Google Sheet directly (desktop) or provide a link -->
-      <div class="thank-you-embed">
-        <iframe src="https://docs.google.com/spreadsheets/d/1ZQP-Vj83eGlqaZfrOnXe7LCoIaWkPHvxDbmKT1pRxtg/preview" frameborder="0" width="100%" height="600"></iframe>
-      </div>
-      <p class="fallback-message">
-        (If the embedded sheet does not load, <a href="https://docs.google.com/spreadsheets/d/1ZQP-Vj83eGlqaZfrOnXe7LCoIaWkPHvxDbmKT1pRxtg/edit?usp=sharing" target="_blank">click here</a> to view the live Thank You Wall.)
-      </p>
-    </div>
+  <!-- Slide 7: Financial Forecast Snapshot -->
+  <section>
+    <div class="slide-title">Financial Forecast</div>
+    <p>We’ve modeled 4 paths: average, underperforming, overperforming, and grant-supported.</p>
+    <p>Realistic. Flexible. Transparent. Updated monthly.</p>
+  </section>
+
+  <!-- Slide 8: Capital Ask -->
+  <section>
+    <div class="slide-title">Capital Ask</div>
+    <p>We don’t need millions. We need trust and a head start.</p>
+    <p>Our funding levels range from $42k (baseline) to $147k (fully flourishing).<br>
+    Every dollar is accounted for and attached to mission impact.</p>
+  </section>
+
+  <!-- Slide 9: Impact Forecast -->
+  <section>
+    <div class="slide-title">Projected Impact</div>
+    <p><span class="highlight">Dogs saved.</span> Workers paid well. Community events hosted with joy.</p>
+    <p>Every cup served supports an entire value system.</p>
+  </section>
+
+  <!-- Slide 10: Path Forward -->
+  <section>
+    <div class="slide-title">Where This Goes</div>
+    <p>From café to co-op.<br>
+       From local hub to replicable, worker-owned model.<br>
+       From concept to movement.</p>
+  </section>
+
+  <!-- Slide 11: The Team -->
+  <section>
+    <div class="slide-title">Meet the Humans</div>
+    <p>I’m [Your Name]. I’m not trying to get rich.<br>
+    I’m trying to build a place where dogs and people both get what they deserve.</p>
+    <p>We’ll grow this team with care, not capital.</p>
+  </section>
+
+  <!-- Slide 12: Call to Action -->
+  <section>
+    <div class="slide-title">Help Us Build This</div>
+    <p>We’re looking for grants, support, partners, and kindness.<br>
+    If you’ve read this far — you’re part of this already.</p>
+    <p>Contact: your.email@example.com | IG: @thepupcafeidea</p>
+    <div class="footer">Your name will go on our first Thank You Wall. Always.</div>
   </section>
 
 </body>
