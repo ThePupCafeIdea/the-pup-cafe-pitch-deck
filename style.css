@@ -1,229 +1,58 @@
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* styles.css */
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #fffdf9;
-  color: #2d2d2d;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fffaf5;
+  color: #3b2f2f;
 }
-
-/* Headings & Text */
-h1, h2, h3 {
-  color: #4a3628;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.05rem;
-  margin-bottom: 15px;
-}
-
-/* Slide Sections */
-.slide {
-  padding: 80px 20px;
+section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  border-bottom: 1px solid #eee;
-}
-
-.content {
-  max-width: 900px;
-  margin: 0 auto;
+  align-items: center;
   text-align: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
 }
-
-/* HERO */
-.title-slide {
-  background: linear-gradient(to bottom, #fff3e0, #ffffff);
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
-.logo {
-  width: 100px;
-  margin-bottom: 20px;
+.slide-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 .tagline {
-  font-size: 1.4rem;
-  color: #7a5c3e;
+  font-size: 1.25rem;
+  color: #6b4f4f;
 }
-.intro-blurb {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 20px 0;
-}
-.cta-button {
-  display: inline-block;
-  background-color: #8ecae6;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: background 0.3s ease;
-}
-.cta-button:hover {
-  background-color: #219ebc;
-}
-
-/* Mission & Values */
-.mission-values {
-  background-color: #f9f9f9;
-}
-.values-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-}
-.value-item {
-  width: 150px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-.value-item img {
-  width: 60px;
-  margin-bottom: 10px;
-}
-.value-item:hover {
-  transform: scale(1.1);
-}
-
-/* Problem */
-.problem {
-  background-color: #fff0e6;
-}
-.stats-widget {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-.stat-item {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  width: 200px;
-  text-align: center;
-}
-.stat-item h3 {
-  font-size: 2rem;
-  color: #d84315;
-}
-
-/* Solution */
-.solution {
-  background-color: #e8f5e9;
-}
-.solution-graphics {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-.graphic-item {
-  text-align: center;
-  width: 220px;
-}
-.graphic-item img {
-  width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-.graphic-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Tabs for Financial Scenarios */
-.tabs {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.tab-button {
-  background-color: #f4a261;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  margin: 0 5px;
-}
-.tab-button:hover,
-.tab-button.active {
-  background-color: #e76f51;
-}
-.tab-content {
-  display: none;
-  margin-top: 30px;
-}
-.tab-content.active {
-  display: block;
-}
-
-/* Tables for Financial Data */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-table th,
-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-table th {
-  background-color: #f3f0ff;
-}
-
-/* Chart Container */
-.chart-container {
-  max-width: 600px;
-  margin: 30px auto;
-}
-.chart-description {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 10px;
-}
-
-/* Dog Training & Nonprofit Section */
-.training-financials {
-  background-color: #fefce8;
-}
-.training-financials table td {
-  text-align: left;
-}
-.detailed-note {
-  font-size: 0.95rem;
-  margin-top: 15px;
-  color: #666;
-}
-
-/* Thank You Wall */
-.final-slide {
-  background-color: #e0f7fa;
-}
-.thank-you-embed {
-  margin-top: 20px;
-}
-.fallback-message {
+.footer {
   font-size: 0.9rem;
-  margin-top: 10px;
+  color: #867272;
+  margin-top: 2rem;
 }
-.fallback-message a {
-  color: #219ebc;
-  text-decoration: underline;
+.highlight {
+  font-weight: bold;
+  color: #8a4f3d;
+}
+.stats {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.image-box, .mockup-box {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+.image-box img, .mockup-box img {
+  width: 100%;
+  border-radius: 12px;
+}
+.cta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
 }
