@@ -12,7 +12,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Keyboard arrow navigation
+// Arrow key slide nav
 const slides = Array.from(document.querySelectorAll('section'));
 let currentIndex = 0;
 
@@ -24,9 +24,6 @@ function scrollToSlide(index) {
 }
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-    scrollToSlide(currentIndex + 1);
-  } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-    scrollToSlide(currentIndex - 1);
-  }
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') scrollToSlide(currentIndex + 1);
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') scrollToSlide(currentIndex - 1);
 });
