@@ -60,6 +60,10 @@ strong {
 .slide-hazelnut { background-color: #f5d9c6; }
 .slide-maple    { background-color: #fce5d4; }
 .slide-cream    { background-color: #fdf3ed; }
+.slide-white {
+  background-color: #ffffff;
+}
+
 
 /* Animation Layer */
 .intro-animation {
