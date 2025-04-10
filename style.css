@@ -55,37 +55,34 @@ strong {
 }
 
 /* Slide Background Themes */
-.slide-wheat    { background-color: #fff5e1; }
-.slide-caramel  { background-color: #fbe4c7; }
-.slide-hazelnut { background-color: #f5d9c6; }
-.slide-maple    { background-color: #fce5d4; }
-.slide-cream    { background-color: #fdf3ed; }
-.slide-offwhite {
-  background-color: #fffcf7;
-}
+.slide-wheat     { background-color: #fff5e1; }
+.slide-caramel   { background-color: #fbe4c7; }
+.slide-hazelnut  { background-color: #f5d9c6; }
+.slide-maple     { background-color: #fce5d4; }
+.slide-cream     { background-color: #fdf3ed; }
+.slide-offwhite  { background-color: #fffcf7; } /* used for slide-1 */
 
-
-
-/* Animation Layer */
+/* Intro Animation Container */
 .intro-animation {
   position: relative;
   width: 100%;
-  height: 250px;
-  margin-bottom: 2rem;
+  height: 260px;
+  margin-top: 2rem;
   pointer-events: none;
 }
 
-/* Ball and Dog initial setup */
+/* Ball and Dog Animation Image Defaults */
 .anim-img {
   position: absolute;
   width: 100px;
   height: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s ease-out;
+  top: 120px; /* aligned slightly lower */
+  transform: translateY(0);
+  transition: transform 0.3s ease-out, left 0.3s ease-out;
+  z-index: 2;
 }
 
-/* Title fade-in timing */
+/* Title Fade-ins */
 .fade-in-delay {
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
@@ -105,4 +102,12 @@ strong {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 768px) {
+  .anim-img {
+    width: 70px;
+    top: 100px;
+  }
 }
