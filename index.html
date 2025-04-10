@@ -294,33 +294,42 @@
   function animate() {
     frame++;
 
-    // Dog chasing ball across screen
+    // 1. Chase phase (side view)
     if (frame <= 20) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
 
-      ball.style.left = `${30 + frame * 1.5}%`;
-      dog.style.left = `${10 + frame * 1.3}%`;
+      ball.style.left = `${20 + frame * 2}%`; // ball moves from 20% to ~60%
+      dog.style.left = `${5 + frame * 2}%`;   // dog moves behind it
 
       ball.style.transform = 'scale(1)';
       dog.style.transform = 'scale(1)';
     }
 
-    // Switch to back-facing dog + scaling down
-    if (frame > 20 && frame <= 40) {
+    // 2. Distance run phase (switch to back view + scale down)
+    if (frame > 20 && frame <= 35) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
 
-      const scaleBall = 1 - ((frame - 20) * 0.025);
-      const scaleDog = 1 - ((frame - 20) * 0.03);
+      const scaleBall = 1 - ((frame - 20) * 0.035); // shrink over time
+      const scaleDog = 1 - ((frame - 20) * 0.032);
 
-      ball.style.left = `${60 + (frame - 20)}%`;
-      dog.style.left = `${58 + (frame - 20)}%`;
+      ball.style.left = `${60 + (frame - 20) * 2}%`; // moves farther right
+      dog.style.left = `${58 + (frame - 20) * 2}%`;
 
       ball.style.transform = `scale(${scaleBall})`;
       dog.style.transform = `scale(${scaleDog})`;
     }
 
+    // 3. Final frame hold position
+    if (frame === 36) {
+      ball.style.left = `92%`;
+      dog.style.left = `88%`;
+      ball.style.transform = `scale(0.4)`;
+      dog.style.transform = `scale(0.4)`;
+    }
+
+    // Loop the animation through these frames
     if (frame < 50) {
       b++; d++;
       setTimeout(() => requestAnimationFrame(animate), 120);
@@ -329,5 +338,6 @@
 
   animate();
 </script>
+
 </body>
 </html>
