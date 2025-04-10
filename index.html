@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pup Café Pitch Deck</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Load GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
@@ -28,17 +30,18 @@
 <!-- Slide 1: Intro -->
 <section id="slide-1" class="slide-offwhite" style="overflow:hidden; position:relative;">
   <div class="intro-animation">
-    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" style="left: -80px;" />
-    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" style="left: 10%;" />
+    <img id="dog" src="assets/frames/dogside/dogside-frame1.png" class="anim-img" style="left: -150px;" />
+    <img id="ball" src="assets/frames/ball/ball-frame1.png" class="anim-img" style="left: -100px;" />
   </div>
 
-  <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
-  <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
-  <div class="footer fade-in-delay-3">
+  <h1 id="main-title" class="fade-in-delay" style="opacity: 0;">🐾 The Pup Café 🐾</h1>
+  <div class="tagline fade-in-delay-2" style="opacity: 0;">a café for dogs, workers & mutual care</div>
+  <div class="footer fade-in-delay-3" style="opacity: 0;">
     Created by [Your Name] — founder, worker, friend of dogs<br />
     your.email@example.com | @thepupcafeidea
   </div>
 </section>
+
 <!-- Slide 2: The Problem -->
   <section id="slide-2" style="background:#fef9f6; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e; margin-bottom:1rem;">The Problem</h2>
@@ -280,66 +283,48 @@
 
   <!-- Animation Script -->
 <script>
-  const ball = document.getElementById("ball");
   const dog = document.getElementById("dog");
+  const ball = document.getElementById("ball");
 
-  const ballFrames = 4;
-  const dogSideFrames = 8;
-  const dogBackFrames = 9;
+  // Set starting styles
+  gsap.set(dog, { scale: 1, top: "58%", left: "-150px" });
+  gsap.set(ball, { scale: 1, top: "54%", left: "-100px" });
 
-  let b = 1, d = 1, frame = 0;
+  // Animate the ball
+  gsap.to(ball, {
+    duration: 2,
+    left: "55%",
+    ease: "power2.out"
+  });
 
-  function animate() {
-    frame++;
+  // Animate the dog catching up
+  gsap.to(dog, {
+    duration: 2.6,
+    left: "48%",
+    ease: "power2.inOut",
+    onComplete: switchToBackView
+  });
 
-    if (frame <= 22) {
-      // SIDE CHASE PHASE
-      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
-      dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
+  function switchToBackView() {
+    // Swap images after catch-up
+    dog.src = "assets/frames/dogback/dogback-frame1.png";
+    ball.src = "assets/frames/ball/ball-frame1.png"; // Keep same or switch
 
-      // Ball moves steadily
-      let ballLeft = 10 + frame * 2;
-      ball.style.left = `${ballLeft}%`;
-      ball.style.transform = `scale(1)`;
+    // Shrink + continue moving away
+    gsap.to([dog, ball], {
+      duration: 1.5,
+      left: "80%",
+      scale: 0.4,
+      ease: "power1.out"
+    });
 
-      // Dog speeds up gradually
-      let dogSpeed = 1.2 + frame * 0.15;
-      let dogLeft = 0 + frame * dogSpeed;
-      dog.style.left = `${dogLeft}%`;
-      dog.style.transform = `scale(1)`;
-    }
-
-    if (frame > 22 && frame <= 35) {
-      // BACK CHASE PHASE (they run farther, getting smaller)
-      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
-      dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
-
-      const distance = frame - 22;
-      const scale = 1 - distance * 0.04;
-
-      ball.style.left = `${54 + distance * 2}%`;
-      dog.style.left = `${52 + distance * 2}%`;
-
-      ball.style.transform = `scale(${scale})`;
-      dog.style.transform = `scale(${scale})`;
-    }
-
-    if (frame === 36) {
-      // HOLD FINAL POSITION
-      ball.style.left = `80%`;
-      dog.style.left = `76%`;
-      ball.style.transform = `scale(0.45)`;
-      dog.style.transform = `scale(0.45)`;
-    }
-
-    if (frame < 50) {
-      b++; d++;
-      setTimeout(() => requestAnimationFrame(animate), 120);
-    }
+    // Fade in title after
+    gsap.to("#main-title", { duration: 1, opacity: 1, delay: 1.6 });
+    gsap.to(".tagline",     { duration: 1, opacity: 1, delay: 2.1 });
+    gsap.to(".footer",      { duration: 1, opacity: 1, delay: 2.6 });
   }
-
-  animate();
 </script>
+
 
 </body>
 </html>
