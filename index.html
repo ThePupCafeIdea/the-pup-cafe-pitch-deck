@@ -29,18 +29,21 @@
 
 <!-- Slide 1: Intro -->
 <section id="slide-1" class="slide-offwhite" style="overflow:hidden; position:relative;">
+  <!-- Animated Dog + Ball -->
   <div class="intro-animation">
-    <img id="dog" src="assets/frames/dogside/dogside-frame1.png" class="anim-img" style="left: -150px;" />
-    <img id="ball" src="assets/frames/ball/ball-frame1.png" class="anim-img" style="left: -100px;" />
+    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" style="left: -100px;" />
+    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" style="left: 0;" />
   </div>
 
-  <h1 id="main-title" class="fade-in-delay" style="opacity: 0;">🐾 The Pup Café 🐾</h1>
-  <div class="tagline fade-in-delay-2" style="opacity: 0;">a café for dogs, workers & mutual care</div>
-  <div class="footer fade-in-delay-3" style="opacity: 0;">
+  <!-- Title -->
+  <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
+  <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
+  <div class="footer fade-in-delay-3">
     Created by [Your Name] — founder, worker, friend of dogs<br />
     your.email@example.com | @thepupcafeidea
   </div>
 </section>
+
 
 <!-- Slide 2: The Problem -->
   <section id="slide-2" style="background:#fef9f6; padding:6rem 2rem; text-align:center;">
@@ -283,46 +286,60 @@
 
   <!-- Animation Script -->
 <script>
-  const dog = document.getElementById("dog");
   const ball = document.getElementById("ball");
+  const dog = document.getElementById("dog");
 
-  // Set starting styles
-  gsap.set(dog, { scale: 1, top: "58%", left: "-150px" });
-  gsap.set(ball, { scale: 1, top: "54%", left: "-100px" });
+  const ballFrames = 4;
+  const dogSideFrames = 8;
+  const dogBackFrames = 9;
 
-  // Animate the ball
-  gsap.to(ball, {
-    duration: 2,
-    left: "55%",
-    ease: "power2.out"
-  });
+  let b = 1, d = 1, frame = 0;
 
-  // Animate the dog catching up
-  gsap.to(dog, {
-    duration: 2.6,
-    left: "48%",
-    ease: "power2.inOut",
-    onComplete: switchToBackView
-  });
+  function animate() {
+    frame++;
 
-  function switchToBackView() {
-    // Swap images after catch-up
-    dog.src = "assets/frames/dogback/dogback-frame1.png";
-    ball.src = "assets/frames/ball/ball-frame1.png"; // Keep same or switch
+    // Chase phase (side view)
+    if (frame <= 20) {
+      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
+      dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
 
-    // Shrink + continue moving away
-    gsap.to([dog, ball], {
-      duration: 1.5,
-      left: "80%",
-      scale: 0.4,
-      ease: "power1.out"
-    });
+      ball.style.left = `${20 + frame * 2}%`;
+      dog.style.left = `${5 + frame * 2}%`;
 
-    // Fade in title after
-    gsap.to("#main-title", { duration: 1, opacity: 1, delay: 1.6 });
-    gsap.to(".tagline",     { duration: 1, opacity: 1, delay: 2.1 });
-    gsap.to(".footer",      { duration: 1, opacity: 1, delay: 2.6 });
+      ball.style.transform = 'scale(1)';
+      dog.style.transform = 'scale(1)';
+    }
+
+    // Distance run phase (back view)
+    if (frame > 20 && frame <= 35) {
+      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
+      dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
+
+      const scaleBall = 1 - ((frame - 20) * 0.035);
+      const scaleDog = 1 - ((frame - 20) * 0.032);
+
+      ball.style.left = `${60 + (frame - 20) * 2}%`;
+      dog.style.left = `${58 + (frame - 20) * 2}%`;
+
+      ball.style.transform = `scale(${scaleBall})`;
+      dog.style.transform = `scale(${scaleDog})`;
+    }
+
+    // Final hold
+    if (frame === 36) {
+      ball.style.left = `92%`;
+      dog.style.left = `88%`;
+      ball.style.transform = `scale(0.4)`;
+      dog.style.transform = `scale(0.4)`;
+    }
+
+    if (frame < 50) {
+      b++; d++;
+      setTimeout(() => requestAnimationFrame(animate), 120);
+    }
   }
+
+  animate();
 </script>
 
 
