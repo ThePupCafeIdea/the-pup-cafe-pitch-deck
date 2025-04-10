@@ -40,54 +40,67 @@
       color: #867272;
       margin-top: 2rem;
     }
-    .highlight {
-      font-weight: bold;
-      color: #8a4f3d;
-    }
     .fade-in-delay {
       opacity: 0;
       animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 2.5s;
+      animation-delay: 2.8s;
     }
     .fade-in-delay-2 {
       opacity: 0;
       animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 3.2s;
+      animation-delay: 3.5s;
     }
     .fade-in-delay-3 {
       opacity: 0;
       animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 3.8s;
+      animation-delay: 4s;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    /* Animation Layer */
     #animation-layer {
-      position: relative;
-      height: 180px;
-      width: 100%;
-      margin-top: 1rem;
-    }
-    .anim-img {
       position: absolute;
-      width: 80px;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      pointer-events: none;
+    }
+
+    #ball, #dog {
+      position: absolute;
+      width: 60px;
       height: auto;
     }
+
     #ball {
-      left: 25%;
-      top: 30px;
+      left: 10%;
+      animation: moveBall 2.5s ease-out forwards;
     }
+
     #dog {
-      right: 25%;
-      top: 40px;
+      right: 10%;
+      animation: moveDog 2.5s ease-out forwards;
+    }
+
+    @keyframes moveBall {
+      0% { left: 10%; top: 30px; }
+      50% { top: 15px; }
+      100% { left: 35%; top: 30px; }
+    }
+
+    @keyframes moveDog {
+      0% { right: 10%; top: 50px; }
+      100% { right: 38%; top: 50px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
+  <!-- Navigation Bar -->
   <nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
     <ul style="display:flex; list-style:none; justify-content:center; gap:1.5rem; margin:0; padding:0;">
       <li><a href="#slide-2">Problem</a></li>
@@ -104,12 +117,12 @@
     </ul>
   </nav>
 
-  <!-- SLIDE 1 -->
+  <!-- Slide 1: Intro -->
   <section id="slide-1" class="slide-cream" style="overflow:hidden; position:relative;">
-    <!-- Animation Layer -->
+    <!-- Animation -->
     <div id="animation-layer">
-      <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" />
-      <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
+      <img id="ball" src="assets/frames/ball/ball-frame1.png" />
+      <img id="dog" src="assets/frames/dogside/dogside-frame1.png" />
     </div>
 
     <!-- Title -->
@@ -122,11 +135,246 @@
       your.email@example.com | @thepupcafeidea
     </div>
   </section>
+<!-- Slide 2: The Problem -->
+  <section id="slide-2" style="background:#fef9f6; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e; margin-bottom:1rem;">The Problem</h2>
+  <p style="font-size:1.2rem; max-width:700px; margin:0 auto 2rem; line-height:1.6;">
+    We live in a system that undervalues care: for animals, for workers, and for each other.  
+    Loneliness is rising. Dogs are abandoned. Café workers live on poverty wages.
+  </p>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem;">
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05); width:250px;">
+      <h3 style="margin:0; color:#8a4f3d;">🐶 3.1M</h3>
+      <p style="margin:0;">Dogs enter US shelters every year</p>
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05); width:250px;">
+      <h3 style="margin:0; color:#8a4f3d;">💼 52%</h3>
+      <p style="margin:0;">of café workers earn below living wage</p>
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05); width:250px;">
+      <h3 style="margin:0; color:#8a4f3d;">😔 61%</h3>
+      <p style="margin:0;">of Gen Z report feeling lonely weekly</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Slide 3: The Solution -->
+  <section id="slide-3" style="background:#fdf7f1; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">The Pup Café Solution</h2>
+  <p style="font-size:1.2rem; max-width:700px; margin:1rem auto 2rem; line-height:1.6;">
+    A joyful, worker-powered café built around rescue dogs, ethical wages, and radical community care.
+  </p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; max-width:1000px; margin:2rem auto;">
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.05);">
+      <strong>Immediate Impact:</strong><br>
+      Living-wage jobs, rescued dogs in the space, tip-sharing
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.05);">
+      <strong>Short-Term:</strong><br>
+      Monthly adoption events, community popups, mutual aid fridge
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.05);">
+      <strong>Long-Term:</strong><br>
+      Worker co-op conversion, training program, nonprofit partnerships
+    </div>
+  </div>
+</section>
+
+
+  <!-- Slide 4: Mission & Model -->
+  <section id="slide-4" style="background:#fffaf4; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Our Mission & Model</h2>
+  <p style="font-size:1.2rem; max-width:800px; margin:1rem auto 2rem;">
+    This isn't charity. This is shared survival. We split our net profits intentionally:
+  </p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:2rem; max-width:900px; margin:2rem auto;">
+    <div><strong>🐕 50%</strong><br>to rescue, rehab & rehome dogs</div>
+    <div><strong>👩‍🍳 30%</strong><br>directly to café workers</div>
+    <div><strong>🌱 10–15%</strong><br>community care + events</div>
+    <div><strong>🧍 1%</strong><br>to founder (just enough to live)</div>
+  </div>
+
+  <img src="images/profit-split-pie.png" alt="Pie chart of profit split" style="max-width:400px; margin-top:2rem;" />
+</section>
+
+
+  <!-- Slide 5: A Day in the Life -->
+  <section id="slide-5" style="background:#fcf5ee; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">A Day in the Life</h2>
+  <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
+    A senior dog naps under a warm window. A barista makes pour-over while chatting with a local artist. Someone drops $5 in the donation jar for vet bills. The air smells like fresh cinnamon and care.
+  </p>
+
+  <img src="images/cafe-day.jpg" alt="Cozy café day scene" style="max-width:600px; border-radius:12px; margin-top:2rem;" />
+
+  <div style="display:flex; justify-content:center; gap:2rem; margin-top:2rem;">
+    <div><strong>🎨 Local art on walls</strong></div>
+    <div><strong>🐾 Dogs welcome inside</strong></div>
+    <div><strong>🎶 Community playlist</strong></div>
+  </div>
+</section>
+
+
+  <!-- Slide 6: Revenue Model -->
+  <section id="slide-6" style="background:#fffefc; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">How We Make Revenue</h2>
+  <p style="font-size:1.2rem; max-width:700px; margin:1rem auto 2rem;">
+    Our revenue model is diversified, simple, and built on real café comps.
+  </p>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;">
+    <div style="background:#fff; padding:1rem; border-radius:10px; width:200px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      ☕ <strong>Coffee & Food</strong><br>60 daily customers × $7
+    </div>
+    <div style="background:#fff; padding:1rem; border-radius:10px; width:200px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      🐕 <strong>Dog-Friendly Events</strong><br>8 events/mo × $15 tickets
+    </div>
+    <div style="background:#fff; padding:1rem; border-radius:10px; width:200px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      👕 <strong>Merch</strong><br>shirts, mugs, stickers
+    </div>
+    <div style="background:#fff; padding:1rem; border-radius:10px; width:200px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      💖 <strong>Donations</strong><br>tips, dog jar, online support
+    </div>
+  </div>
+
+  <img src="images/menu-mockup.png" alt="Menu mockup" style="max-width:600px; margin-top:2rem; border-radius:12px;" />
+</section>
+
+
+  <!-- Slide 7: Financial Forecast -->
+  <section id="slide-7" style="background:#fdfaf7; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Financial Forecast</h2>
+  <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
+    We’ve modeled four distinct scenarios: baseline, underperforming, hopeful, and grant-supported.
+  </p>
+
+  <img src="images/scenario-chart.png" alt="Financial forecast chart" style="max-width:600px; margin-top:2rem; border-radius:12px;" />
+
+  <p style="margin-top:2rem; font-size:1rem; color:#6b4f4f;">
+    Backed by real data from your full financial evaluation.  
+    <a href="https://docs.google.com/spreadsheets/d/1ei9B0-uva0NeaAoIzRd24EYCrqw8wVgCSHgSkU4bksk" target="_blank" style="color:#8a4f3d;">View live model ↗</a>
+  </p>
+</section>
+
+  <!-- Slide 8: Capital Ask -->
+  <section id="slide-8" style="background:#fef9f3; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Capital Ask</h2>
+  <p style="font-size:1.2rem; max-width:700px; margin:1rem auto;">
+    This is exactly how we’ll use every dollar.
+  </p>
+
+  <img src="images/capital-tiers.png" alt="Funding tier visualization" style="max-width:600px; border-radius:12px;" />
+
+  <div style="margin-top:2rem;">
+    <a href="https://docs.google.com/document/d/1Ykd5RfUSCDssz6NNX93XuCzjh-C1sNL_QpuLPejVMPA" target="_blank" style="font-weight:bold; color:#8a4f3d;">
+      → View Capital Use Breakdown (Google Doc)
+    </a>
+  </div>
+</section>
+
+
+  <!-- Slide 9: Impact Forecast -->
+  <section id="slide-9" style="background:#f7f1eb; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Our Projected Impact</h2>
+  <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
+    More than a café. We’re building a replicable model of care and community-rooted economy.
+  </p>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem;">
+    <div style="background:#fff; padding:1.5rem; border-radius:10px; width:220px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      🐶 <strong>70+ Dogs Rescued</strong><br>in first 18 months
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:10px; width:220px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      👩‍🍳 <strong>5 Ethical Jobs</strong><br>living wage & profit share
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:10px; width:220px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      🌾 <strong>Monthly Markets</strong><br>partnered with local orgs
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:10px; width:220px; box-shadow:0 2px 6px rgba(0,0,0,0.05);">
+      🎤 <strong>Events + Workshops</strong><br>dog care, storytelling, mutual aid
+    </div>
+  </div>
+
+  <img src="images/community-events.jpg" alt="Photo of community event" style="margin-top:2rem; border-radius:12px; max-width:600px;" />
+</section>
+
+
+  <!-- Slide 10: The Path Forward -->
+  <section id="slide-10" style="background:#fff8f3; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Where This Grows From Here</h2>
+  <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
+    The Pup Café isn’t a one-off. It’s a prototype — a first version of something bigger, more ethical, and deeply needed.
+  </p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; max-width:1000px; margin:2rem auto;">
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+      <strong>Year 1</strong><br>
+      Launch in Dallas, refine the care model, track impact
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+      <strong>Year 2–3</strong><br>
+      Add dog training, host clinics, launch first dog-worker stories
+    </div>
+    <div style="background:#fff; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+      <strong>Year 4+</strong><br>
+      Begin co-op transition. Launch toolkit to replicate the model elsewhere.
+    </div>
+  </div>
+</section>
+
+
+  <!-- Slide 11: Meet the Humans -->
+  <section id="slide-11" style="background:#fdf6ef; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Who's Behind This?</h2>
+  <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
+    I’m <strong>[Your Name]</strong> — not a tech founder, not trying to get rich, just a dog-loving human trying to build something better.
+  </p>
+
+  <div style="max-width:500px; margin:2rem auto;">
+    <img src="images/founder-photo.jpg" alt="Photo of founder or symbolic image" style="width:100%; border-radius:12px;" />
+  </div>
+
+  <p style="margin-top:1.5rem; font-size:1rem; color:#6b4f4f;">
+    As we grow, our team will be local, diverse, and deeply cared for — just like the dogs.
+  </p>
+</section>
+
+  <!-- Slide 12: Call to Action -->
+  <section id="slide-12" style="background:#fef7f1; padding:6rem 2rem; text-align:center;">
+  <h2 style="font-size:2.5rem; color:#5c3d2e;">Help Us Build The Pup Café</h2>
+  <p style="font-size:1.2rem; max-width:700px; margin:1rem auto;">
+    This isn’t a pitch. It’s an invitation. Whether you’re a funder, a volunteer, an artist, or just someone who wants better things in the world — we want to build this with you.
+  </p>
+
+  <div style="margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      🐶 <strong>Donate or invest</strong><br>Fuel the launch
+    </div>
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      📣 <strong>Spread the word</strong><br>Instagram • Notion • IRL
+    </div>
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      💌 <strong>Join our waitlist</strong><br>Coming soon at thepup.cafe
+    </div>
+  </div>
+
+  <p style="margin-top:3rem; font-size:1.1rem; font-style:italic;">
+    Your name will be the first on our Thank You Wall.
+  </p>
+
+  <p style="font-size:1rem; color:#8a4f3d; margin-top:1rem;">
+    Contact: <a href=\"mailto:your.email@example.com\">your.email@example.com</a><br>
+    Instagram: <a href=\"https://instagram.com/thepupcafeidea\">@thepupcafeidea</a>
+  </p>
+</section>
 
   <!-- KEEP THE REST OF SLIDES AS THEY ARE -->
   <!-- ... Slide 2 through Slide 12 ... -->
 
-  <!-- FRAME ANIMATION SCRIPT -->
+  <!-- Animation Script -->
   <script>
     const ball = document.getElementById("ball");
     const dog = document.getElementById("dog");
@@ -135,16 +383,18 @@
     const dogFrames = 9;
     let b = 1, d = 1;
 
-    function animate() {
+    function animateFrames() {
       ball.src = `assets/frames/ball/ball-frame${b}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${d}.png`;
 
       b = b % ballFrames + 1;
       d = d % dogFrames + 1;
 
-      setTimeout(() => requestAnimationFrame(animate), 120);
+      setTimeout(() => requestAnimationFrame(animateFrames), 120);
     }
-    animate();
+
+    animateFrames();
   </script>
+
 </body>
 </html>
