@@ -1,141 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pup Café Pitch Deck</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #fffaf5;
-      color: #3b2f2f;
-      scroll-behavior: smooth;
-    }
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      box-sizing: border-box;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .slide-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .tagline {
-      font-size: 1.25rem;
-      color: #6b4f4f;
-    }
-    .footer {
-      font-size: 0.9rem;
-      color: #867272;
-      margin-top: 2rem;
-    }
-    .fade-in-delay {
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 2.8s;
-    }
-    .fade-in-delay-2 {
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 3.5s;
-    }
-    .fade-in-delay-3 {
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in forwards;
-      animation-delay: 4s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Animation Layer */
-    #animation-layer {
-      position: absolute;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      pointer-events: none;
-    }
-
-    #ball, #dog {
-      position: absolute;
-      width: 60px;
-      height: auto;
-    }
-
-    #ball {
-      left: 10%;
-      animation: moveBall 2.5s ease-out forwards;
-    }
-
-    #dog {
-      right: 10%;
-      animation: moveDog 2.5s ease-out forwards;
-    }
-
-    @keyframes moveBall {
-      0% { left: 10%; top: 30px; }
-      50% { top: 15px; }
-      100% { left: 35%; top: 30px; }
-    }
-
-    @keyframes moveDog {
-      0% { right: 10%; top: 50px; }
-      100% { right: 38%; top: 50px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
-    <ul style="display:flex; list-style:none; justify-content:center; gap:1.5rem; margin:0; padding:0;">
-      <li><a href="#slide-2">Problem</a></li>
-      <li><a href="#slide-3">Solution</a></li>
-      <li><a href="#slide-4">Model</a></li>
-      <li><a href="#slide-5">Day</a></li>
-      <li><a href="#slide-6">Revenue</a></li>
-      <li><a href="#slide-7">Forecast</a></li>
-      <li><a href="#slide-8">Ask</a></li>
-      <li><a href="#slide-9">Impact</a></li>
-      <li><a href="#slide-10">Future</a></li>
-      <li><a href="#slide-11">Team</a></li>
-      <li><a href="#slide-12">CTA</a></li>
-    </ul>
-  </nav>
+<!-- Navigation -->
+<nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
+  <ul style="display:flex; list-style:none; justify-content:center; gap:1.5rem; margin:0; padding:0;">
+    <li><a href="#slide-2">Problem</a></li>
+    <li><a href="#slide-3">Solution</a></li>
+    <li><a href="#slide-4">Model</a></li>
+    <li><a href="#slide-5">Day</a></li>
+    <li><a href="#slide-6">Revenue</a></li>
+    <li><a href="#slide-7">Forecast</a></li>
+    <li><a href="#slide-8">Ask</a></li>
+    <li><a href="#slide-9">Impact</a></li>
+    <li><a href="#slide-10">Future</a></li>
+    <li><a href="#slide-11">Team</a></li>
+    <li><a href="#slide-12">CTA</a></li>
+  </ul>
+</nav>
 
-  <!-- Slide 1: Intro -->
-  <section id="slide-1" class="slide-cream" style="overflow:hidden; position:relative;">
-    <!-- Animation -->
-    <div id="animation-layer">
-      <img id="ball" src="assets/frames/ball/ball-frame1.png" />
-      <img id="dog" src="assets/frames/dogside/dogside-frame1.png" />
-    </div>
+<!-- Slide 1: Intro -->
+<section id="slide-1" class="slide-cream" style="overflow:hidden; position:relative;">
+  <!-- Animation container -->
+  <div class="intro-animation">
+    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" />
+    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
+  </div>
 
-    <!-- Title -->
-    <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
-    <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
-
-    <!-- Footer -->
-    <div class="footer fade-in-delay-3">
-      Created by [Your Name] — founder, worker, friend of dogs<br />
-      your.email@example.com | @thepupcafeidea
-    </div>
-  </section>
+  <!-- Title fade in -->
+  <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
+  <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
+  <div class="footer fade-in-delay-3">
+    Created by [Your Name] — founder, worker, friend of dogs<br />
+    your.email@example.com | @thepupcafeidea
+  </div>
+</section>
 <!-- Slide 2: The Problem -->
   <section id="slide-2" style="background:#fef9f6; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e; margin-bottom:1rem;">The Problem</h2>
@@ -376,26 +281,46 @@
   <!-- ... Slide 2 through Slide 12 ... -->
 
   <!-- Animation Script -->
-  <script>
-    const ball = document.getElementById("ball");
-    const dog = document.getElementById("dog");
+<script>
+  const ball = document.getElementById("ball");
+  const dog = document.getElementById("dog");
 
-    const ballFrames = 6;
-    const dogFrames = 9;
-    let b = 1, d = 1;
+  const ballFrames = 4;
+  const dogSideFrames = 8;
+  const dogBackFrames = 9;
 
-    function animateFrames() {
-      ball.src = `assets/frames/ball/ball-frame${b}.png`;
-      dog.src = `assets/frames/dogside/dogside-frame${d}.png`;
+  let b = 1, d = 1, frame = 0;
 
-      b = b % ballFrames + 1;
-      d = d % dogFrames + 1;
+  function animate() {
+    frame++;
 
-      setTimeout(() => requestAnimationFrame(animateFrames), 120);
+    // Chase phase: dog side + ball bounces
+    if (frame <= 20) {
+      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
+      dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
+      ball.style.left = `${25 + frame * 2}px`;
+      dog.style.left = `${20 + frame * 1.8}px`;
     }
 
-    animateFrames();
-  </script>
+    // Back view phase: ball/dog moving away
+    if (frame > 20 && frame <= 40) {
+      ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
+      dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
+      ball.style.transform = `scale(${1 - (frame - 20) * 0.03})`;
+      dog.style.transform = `scale(${1 - (frame - 20) * 0.025})`;
+      ball.style.left = `${65 + (frame - 20)}%`;
+      dog.style.left = `${60 + (frame - 20)}%`;
+    }
 
+    // Done animating
+    if (frame < 50) {
+      b++;
+      d++;
+      setTimeout(() => requestAnimationFrame(animate), 120);
+    }
+  }
+
+  animate();
+</script>
 </body>
 </html>
