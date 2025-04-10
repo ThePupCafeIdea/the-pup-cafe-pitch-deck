@@ -299,19 +299,19 @@
     function animate() {
       frame++;
 
-      // Side View (Chase Phase)
+      // Phase 1: Chase (dog from side)
       if (frame <= 20) {
         ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
         dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
 
         ball.style.left = `${20 + frame * 2}%`;
-        dog.style.left = `${5 + frame * 2}%`;
+        dog.style.left = `${5 + frame * (1.7 + frame * 0.01)}%`; // dog accelerates slightly
 
-        ball.style.transform = 'scale(1)';
-        dog.style.transform = 'scale(1)';
+        ball.style.transform = `scale(1)`;
+        dog.style.transform = `scale(1)`;
       }
 
-      // Back View (Distance Phase)
+      // Phase 2: Running away (dog from back)
       if (frame > 20 && frame <= 35) {
         ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
         dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
@@ -326,7 +326,7 @@
         dog.style.transform = `scale(${scaleDog})`;
       }
 
-      // Final Position Hold
+      // Hold final position
       if (frame === 36) {
         ball.style.left = `92%`;
         dog.style.left = `88%`;
@@ -344,6 +344,7 @@
     animate();
   };
 </script>
+
 
 
 
