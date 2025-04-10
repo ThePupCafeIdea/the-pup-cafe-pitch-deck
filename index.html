@@ -27,13 +27,13 @@
 
 <!-- Slide 1: Intro -->
 <section id="slide-1" class="slide-cream" style="overflow:hidden; position:relative;">
-  <!-- Animation container -->
+  <!-- Animated Dog + Ball -->
   <div class="intro-animation">
-    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" />
-    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
+    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" style="left: -100px;" />
+    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" style="left: 0;" />
   </div>
 
-  <!-- Title fade in -->
+  <!-- Title -->
   <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
   <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
   <div class="footer fade-in-delay-3">
@@ -294,28 +294,35 @@
   function animate() {
     frame++;
 
-    // Chase phase: dog side + ball bounces
+    // Dog chasing ball across screen
     if (frame <= 20) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
-      ball.style.left = `${25 + frame * 2}px`;
-      dog.style.left = `${20 + frame * 1.8}px`;
+
+      ball.style.left = `${30 + frame * 1.5}%`;
+      dog.style.left = `${10 + frame * 1.3}%`;
+
+      ball.style.transform = 'scale(1)';
+      dog.style.transform = 'scale(1)';
     }
 
-    // Back view phase: ball/dog moving away
+    // Switch to back-facing dog + scaling down
     if (frame > 20 && frame <= 40) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
-      ball.style.transform = `scale(${1 - (frame - 20) * 0.03})`;
-      dog.style.transform = `scale(${1 - (frame - 20) * 0.025})`;
-      ball.style.left = `${65 + (frame - 20)}%`;
-      dog.style.left = `${60 + (frame - 20)}%`;
+
+      const scaleBall = 1 - ((frame - 20) * 0.025);
+      const scaleDog = 1 - ((frame - 20) * 0.03);
+
+      ball.style.left = `${60 + (frame - 20)}%`;
+      dog.style.left = `${58 + (frame - 20)}%`;
+
+      ball.style.transform = `scale(${scaleBall})`;
+      dog.style.transform = `scale(${scaleDog})`;
     }
 
-    // Done animating
     if (frame < 50) {
-      b++;
-      d++;
+      b++; d++;
       setTimeout(() => requestAnimationFrame(animate), 120);
     }
   }
