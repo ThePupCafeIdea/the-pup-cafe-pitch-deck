@@ -54,44 +54,45 @@ strong {
   color: #8a4f3d;
 }
 
-/* Slide-specific background colors */
-.slide-wheat     { background-color: #fff5e1; }   /* light wheat */
-.slide-caramel   { background-color: #fbe4c7; }   /* warm caramel */
-.slide-hazelnut  { background-color: #f5d9c6; }   /* soft nutty tone */
-.slide-maple     { background-color: #fce5d4; }   /* maple light brown */
-.slide-cream     { background-color: #fdf3ed; }   /* for calm/filler slides */
+/* Slide Background Themes */
+.slide-wheat    { background-color: #fff5e1; }
+.slide-caramel  { background-color: #fbe4c7; }
+.slide-hazelnut { background-color: #f5d9c6; }
+.slide-maple    { background-color: #fce5d4; }
+.slide-cream    { background-color: #fdf3ed; }
 
-/* Animation container */
+/* Animation Layer */
 .intro-animation {
   position: relative;
   width: 100%;
   height: 200px;
   margin-top: 2rem;
+  pointer-events: none;
 }
 
-/* Ball animation (updated path) */
+/* Ball Animation */
 .ball {
   position: absolute;
   left: -100px;
   top: 45%;
   width: 50px;
   height: 50px;
-  background: url('assets/Ball.png') no-repeat center/contain;
+  background: url('assets/frames/ball/ball-frame1.png') no-repeat center/contain;
   animation: bounce-roll 3s ease-out forwards;
 }
 
-/* Dog animation (updated path) */
+/* Dog Animation */
 .dog {
   position: absolute;
   right: -120px;
   top: 50%;
   width: 100px;
   height: 100px;
-  background: url('assets/DogFromSide.png') no-repeat center/contain;
+  background: url('assets/frames/dogside/dogside-frame1.png') no-repeat center/contain;
   animation: dog-run 3s ease-out forwards;
 }
 
-/* Text fade-in effects */
+/* Title Text Fade-ins */
 .fade-in-delay {
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
