@@ -59,7 +59,6 @@ strong {
   background-color: #fffcf7;
 }
 
-/* Animation Layer */
 .intro-animation {
   position: relative;
   width: 100%;
@@ -68,16 +67,16 @@ strong {
   pointer-events: none;
 }
 
-/* Ball & Dog Base Style */
 .anim-img {
   position: absolute;
   width: 100px;
   height: auto;
-  top: 60%;
+  top: 60%; /* dropped a few px for alignment with paws */
   transform: translateY(-50%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
   z-index: 2;
 }
+
 
 /* Fade-ins */
 .fade-in-delay {
