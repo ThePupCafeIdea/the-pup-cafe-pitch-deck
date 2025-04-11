@@ -63,26 +63,29 @@ strong {
   position: relative;
   width: 100%;
   height: 250px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* optional tweak */
   pointer-events: none;
 }
 
+/* Shared styles */
 .anim-img {
   position: absolute;
   width: 100px;
   height: auto;
-  top: 78%; /* lower Y position */
+  top: 70%;  /* 🔽 move closer to center line */
   transform: translateY(-50%);
-  pointer-events: none;
+  transition: transform 0.3s ease-out;
+  z-index: 1; /* base layer */
 }
 
-/* Dog should appear in front of the ball */
+#dog {
+  z-index: 2; /* ensure dog appears above ball */
+}
+
 #ball {
   z-index: 1;
 }
-#dog {
-  z-index: 2;
-}
+
 
 
 /* Fade-ins */
