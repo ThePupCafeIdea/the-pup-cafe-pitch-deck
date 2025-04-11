@@ -300,36 +300,38 @@
   function animate() {
     frame++;
 
-    // Phase 1: Side-view chase
+    // ---- PHASE 1: Side chase ----
     if (frame <= 24) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
 
-      ball.style.left = `${20 + frame * 1.8}%`; // ball moves at steady pace
-      // dog speeds up slightly each frame to catch up
-      const dogLeft = 5 + (frame ** 1.12) * 0.5;
-      dog.style.left = `${dogLeft}%`;
+      // Movement left → right (dog slightly behind)
+      const ballPos = 20 + frame * 1.8;
+      const dogPos = 5 + (frame ** 1.1) * 0.5;
 
-      ball.style.transform = 'scale(1)';
-      dog.style.transform = 'scale(1)';
+      ball.style.left = `${ballPos}%`;
+      dog.style.left = `${dogPos}%`;
+
+      ball.style.transform = `scale(1)`;  // No unrealistic scale bounce
+      dog.style.transform = `scale(1)`;
     }
 
-    // Phase 2: Switch to back view and shrink
+    // ---- PHASE 2: Distance shrink ----
     if (frame > 24 && frame <= 38) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
 
-      const scale = 1 - ((frame - 24) * 0.035);
-      const move = frame - 24;
+      const progress = frame - 24;
+      const scale = 1 - progress * 0.035;
 
-      ball.style.left = `${63 + move * 2}%`;
-      dog.style.left = `${60 + move * 2}%`;
+      ball.style.left = `${63 + progress * 2}%`;
+      dog.style.left = `${60 + progress * 2}%`;
 
       ball.style.transform = `scale(${scale})`;
       dog.style.transform = `scale(${scale})`;
     }
 
-    // Phase 3: Hold final position
+    // ---- PHASE 3: Stop at final position ----
     if (frame === 39) {
       ball.style.left = `92%`;
       dog.style.left = `88%`;
@@ -337,7 +339,7 @@
       dog.style.transform = `scale(0.4)`;
     }
 
-    // Loop & animate frames
+    // Animate next frame
     if (frame < 50) {
       b++;
       d++;
@@ -347,6 +349,7 @@
 
   animate();
 </script>
+
 
 
 
