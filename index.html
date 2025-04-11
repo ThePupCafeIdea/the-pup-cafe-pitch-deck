@@ -42,8 +42,9 @@
   <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
   <div class="tagline fade-in-delay-2">A café for dogs, workers & mutual care</div>
   <div class="footer fade-in-delay-3">
-    Created by Hunter Harris & Stephen Barksdale — founders, workers, lovers of dogs<br />
-   ThePupCafeIdea@Gmail.com | @ThePupCafeIdea
+    Created by Hunter Harris & Stephen Barksdale 
+    — founders, workers, lovers of dogs<br />
+    ThePupCafeIdea@Gmail.com | @ThePupCafeIdea
   </div>
 </section>
 
@@ -55,18 +56,38 @@
     We live in a system that undervalues care: for animals, for workers, and for each other.  
     Loneliness is rising. Dogs are abandoned. Café workers live on poverty wages.
   </p>
-  <div class="fact-rotator">
-  <div class="fact active">
-    <h3>🐶 <strong>3.1M</strong></h3>
-    <p>Dogs enter US shelters every year</p>
+  <div class="stat-columns">
+  <!-- 🐶 Dogs Block -->
+  <div class="fact-block" id="dog-block">
+    <div class="fact active">🐶 <strong>3.1M</strong><br>Dogs enter US shelters every year</div>
+    <div class="fact">🐾 <strong>390K</strong><br>Dogs are euthanized annually</div>
+    <div class="fact">🏠 <strong>1 in 5</strong><br>adopted dogs are returned</div>
+    <div class="fact-controls">
+      <button onclick="prevFact('dog-block')">⟨</button>
+      <button onclick="nextFact('dog-block')">⟩</button>
+    </div>
   </div>
-  <div class="fact">
-    <h3>💼 <strong>52%</strong></h3>
-    <p>of café workers earn below living wage</p>
+
+  <!-- 💼 Workers Block -->
+  <div class="fact-block" id="worker-block">
+    <div class="fact active">💼 <strong>52%</strong><br>of café workers earn below living wage</div>
+    <div class="fact">⏰ <strong>76%</strong><br>of food service workers lack paid sick leave</div>
+    <div class="fact">👩‍🍳 <strong>39%</strong><br>of baristas report burnout weekly</div>
+    <div class="fact-controls">
+      <button onclick="prevFact('worker-block')">⟨</button>
+      <button onclick="nextFact('worker-block')">⟩</button>
+    </div>
   </div>
-  <div class="fact">
-    <h3>😔 <strong>61%</strong></h3>
-    <p>of Gen Z report feeling lonely weekly</p>
+
+  <!-- 😔 Community Block -->
+  <div class="fact-block" id="community-block">
+    <div class="fact active">😔 <strong>61%</strong><br>of Gen Z report feeling lonely weekly</div>
+    <div class="fact">📉 <strong>50%</strong><br>of adults say they have <em>3 or fewer</em> close friends</div>
+    <div class="fact">❤️ <strong>1 in 3</strong><br>Americans say they feel isolated</div>
+    <div class="fact-controls">
+      <button onclick="prevFact('community-block')">⟨</button>
+      <button onclick="nextFact('community-block')">⟩</button>
+    </div>
   </div>
 </div>
 
