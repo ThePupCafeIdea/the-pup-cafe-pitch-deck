@@ -301,23 +301,22 @@
   function animate() {
     frame++;
 
-    // ---- PHASE 1: Side chase ----
+    // Phase 1: Chase
     if (frame <= 24) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
 
-      // Movement left → right (dog slightly behind)
-      const ballPos = 20 + frame * 1.8;
-      const dogPos = 5 + (frame ** 1.1) * 0.5;
+      const ballLeft = 20 + frame * 2;
+      const dogLeft = 5 + frame * 1.9;
 
-      ball.style.left = `${ballPos}%`;
-      dog.style.left = `${dogPos}%`;
+      ball.style.left = `${ballLeft}%`;
+      dog.style.left = `${dogLeft}%`;
 
-      ball.style.transform = `scale(1)`;  // No unrealistic scale bounce
+      ball.style.transform = `scale(1)`;
       dog.style.transform = `scale(1)`;
     }
 
-    // ---- PHASE 2: Distance shrink ----
+    // Phase 2: Shrinking distance
     if (frame > 24 && frame <= 38) {
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
@@ -325,31 +324,32 @@
       const progress = frame - 24;
       const scale = 1 - progress * 0.035;
 
-      ball.style.left = `${63 + progress * 2}%`;
-      dog.style.left = `${60 + progress * 2}%`;
+      const ballLeft = 68 + progress * 1.8;
+      const dogLeft = 65 + progress * 1.8;
+
+      ball.style.left = `${ballLeft}%`;
+      dog.style.left = `${dogLeft}%`;
 
       ball.style.transform = `scale(${scale})`;
       dog.style.transform = `scale(${scale})`;
     }
 
-    // ---- PHASE 3: Stop at final position ----
     if (frame === 39) {
-      ball.style.left = `92%`;
-      dog.style.left = `88%`;
+      ball.style.left = `93%`;
+      dog.style.left = `89%`;
       ball.style.transform = `scale(0.4)`;
       dog.style.transform = `scale(0.4)`;
     }
 
-    // Animate next frame
     if (frame < 50) {
-      b++;
-      d++;
+      b++; d++;
       setTimeout(() => requestAnimationFrame(animate), 110);
     }
   }
 
   animate();
 </script>
+
 
 
 
