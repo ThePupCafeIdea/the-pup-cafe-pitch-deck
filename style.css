@@ -17,6 +17,13 @@ section {
   text-align: center;
 }
 
+.title-char {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  display: inline-block;
+}
+
+
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
