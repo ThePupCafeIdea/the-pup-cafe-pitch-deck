@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,12 +6,12 @@
   <title>The Pup Café Pitch Deck</title>
   <link rel="stylesheet" href="style.css">
   <!-- GSAP included (optional right now) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
+<!--<nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
   <ul style="display:flex; list-style:none; justify-content:center; gap:1.5rem; margin:0; padding:0;">
     <li><a href="#slide-2">Problem</a></li>
     <li><a href="#slide-3">Solution</a></li>
@@ -28,7 +28,7 @@
 </nav>
 
 <!-- Slide 1: Intro -->
-<section id="slide-1" class="slide-offwhite" style="overflow:hidden; position:relative;">
+<!--<section id="slide-1" class="slide-offwhite" style="overflow:hidden; position:relative;">
 
   <!-- Dog + Ball Animation (temporarily disabled) -->
   <!--
@@ -37,14 +37,14 @@
     <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
   </div>
   -->
-<div id="pawTrail">
+<!--<div id="pawTrail">
   <img src="images/paw1.png" class="paw" />
   <img src="images/paw2.png" class="paw" />
   <img src="images/paw3.png" class="paw" />
 </div>
 
   <!-- Title -->
-  <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
+<!--<h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
   <div class="tagline fade-in-delay-2">A café for dogs, workers & mutual care</div>
   <div class="footer fade-in-delay-3">
     Created by Hunter Harris & Stephen Barksdale 
@@ -55,7 +55,7 @@
 
 
 <!-- Slide 2: The Problem -->
-<section id="slide-2" class="slide-offwhite" style="text-align:center; padding:6rem 2rem;">
+<!--<section id="slide-2" class="slide-offwhite" style="text-align:center; padding:6rem 2rem;">
   <h2 class="problem-title">The Problem</h2>
   <p class="problem-subtext">
     We live in a system that undervalues care: for animals, for workers, and for each other.  
@@ -64,7 +64,7 @@
 
   <div class="problem-cards">
     <!-- Dogs -->
-    <div class="problem-card">
+   <!--<!-- <div class="problem-card">
       <div class="stat" id="dogs-stat"></div>
       <div class="controls">
         <button onclick="prevFact('dogs')">‹</button>
@@ -73,7 +73,7 @@
     </div>
 
     <!-- Workers -->
-    <div class="problem-card">
+    <!--<div class="problem-card">
       <div class="stat" id="workers-stat"></div>
       <div class="controls">
         <button onclick="prevFact('workers')">‹</button>
@@ -82,7 +82,7 @@
     </div>
 
     <!-- Community -->
-    <div class="problem-card">
+    <!--<div class="problem-card">
       <div class="stat" id="community-stat"></div>
       <div class="controls">
         <button onclick="prevFact('community')">‹</button>
@@ -93,7 +93,7 @@
 </section>
 
 <!-- Slide 3: The Solution -->
-<section id="slide-3" class="slide-clean">
+<!--<section id="slide-3" class="slide-clean">
   <h2 class="slide-heading">The Pup Café Solution</h2>
   <p class="slide-subheading">
     Not a novelty, not a stunt — a full-system alternative built around rescue, dignity, and worker care.
@@ -102,7 +102,7 @@
   <div class="solution-columns">
 
     <!-- Immediate Impact -->
-    <div class="solution-block">
+ <!--   <div class="solution-block">
       <h3>🐾 Immediate Impact</h3>
       <ul>
         <li>
@@ -121,7 +121,7 @@
     </div>
 
     <!-- Short-Term Goals -->
-    <div class="solution-block">
+   <!-- <div class="solution-block">
       <h3>🌟 Short-Term Goals</h3>
       <ul>
         <li>
@@ -140,7 +140,7 @@
     </div>
 
     <!-- Long-Term Vision -->
-    <div class="solution-block">
+    <!--<div class="solution-block">
       <h3>🌱 Long-Term Vision</h3>
       <ul>
         <li>
@@ -167,7 +167,7 @@
       </ul>
     </div>
 <!-- Possibilities Block -->
-<div class="solution-block">
+<!--<div class="solution-block">
   <h3>🌈 Possibilities Are Open</h3>
   <ul>
     <li>
@@ -194,14 +194,14 @@
 
 
   <!-- Slide 4: Mission & Model -->
-  <section id="slide-4" style="background:#C2DCAA; padding:6rem 2rem; text-align:center;">
+ <!-- <section id="slide-4" style="background:#C2DCAA; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#3d392e;">What It Takes to Start</h2>
   <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
     We’ve mapped the path to launch — with flexible tiers that reflect real costs, honest goals, and growing community care.
   </p>
 
   <!-- Baseline Startup Costs -->
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem;">
+ <!-- <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem;">
     <div style="background:#fff; padding:1.5rem; border-radius:12px; width:280px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
       <h3 style="margin:0; color:#8a4f3d;">$42,000</h3>
       <p style="margin-top:0.3rem;">Minimum to Open</p>
@@ -220,7 +220,7 @@
   </div>
 
   <!-- Tiers of Support -->
-  <div style="margin-top:3rem;">
+  <!--<div style="margin-top:3rem;">
     <h3 style="color:#3d392e;">What Different Levels Unlock</h3>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem; max-width:1000px; margin:2rem auto;">
       <div style="background:#fff; border-left:5px solid #d4a373; padding:1.5rem; border-radius:10px; text-align:left;">
@@ -251,7 +251,7 @@
   </div>
 
   <!-- Profit Split Graphic -->
-  <div style="margin-top:3rem;">
+  <!--<div style="margin-top:3rem;">
     <h3 style="color:#3d392e;">Every Dollar is Split Intentionally</h3>
     <img src="images/profit-split-pie.png" alt="Profit distribution chart" style="max-width:450px; border-radius:12px;" />
     <p class="finance-note" style="font-size:1rem; color:#5c3d2e; margin-top:1rem;">
@@ -260,7 +260,7 @@
   </div>
 
   <!-- Link to Public Budget -->
-  <p style="margin-top:2rem; font-size:1rem; color:#6b4f4f;">
+ <!-- <p style="margin-top:2rem; font-size:1rem; color:#6b4f4f;">
     All numbers based on real comps, staff planning, and cost forecasting. <br />
     <a href="https://docs.google.com/spreadsheets/d/1ei9B0-uva0NeaAoIzRd24EYCrqw8wVgCSHgSkU4bksk" target="_blank" style="color:#8a4f3d;">
       → View our live financial sheet
@@ -273,7 +273,7 @@
 
 
   <!-- Slide 5: A Day in the Life -->
-  <section id="slide-5" style="background:#fcf5ee; padding:6rem 2rem; text-align:center;">
+ <!-- <section id="slide-5" style="background:#fcf5ee; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e;">A Day in the Life</h2>
   <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
     A senior dog naps under a warm window. A barista makes pour-over while chatting with a local artist. Someone drops $5 in the donation jar for vet bills. The air smells like fresh cinnamon and care.
@@ -290,7 +290,7 @@
 
 
   <!-- Slide 6: Revenue Model -->
-  <section id="slide-6" class="slide-clean" style="text-align:center; padding: 6rem 2rem;">
+<!--  <section id="slide-6" class="slide-clean" style="text-align:center; padding: 6rem 2rem;">
   <h2 class="slide-heading">Where Revenue Comes From</h2>
   <p class="slide-subheading">
     A café alone wouldn’t survive. But this isn’t just a café — it’s a whole ecosystem of care:
@@ -329,7 +329,7 @@
 
 
   <!-- Slide 9: Impact Forecast -->
- <section id="slide-9" style="background:#f7f1eb; padding:6rem 2rem; text-align:center;">
+<!-- <section id="slide-9" style="background:#f7f1eb; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e;">What Impact Looks Like</h2>
   <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
     Every dollar translates into direct outcomes — for dogs, for workers, and for our community.
@@ -354,7 +354,7 @@
 
 
   <!-- Slide 10: The Path Forward -->
-  <section id="slide-10" style="background:#fff8f3; padding:6rem 2rem; text-align:center;">
+ <!-- <section id="slide-10" style="background:#fff8f3; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e;">Where This Grows From Here</h2>
   <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
     The Pup Café is a prototype — not a one-off. Our long-term goal: build a replicable model of mutual care, centered around dogs, workers, and community need.
@@ -375,7 +375,7 @@
 
 
   <!-- Slide 11: Meet the Humans -->
-  <section id="slide-11" style="background:#fdf6ef; padding:6rem 2rem; text-align:center;">
+<!--  <section id="slide-11" style="background:#fdf6ef; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e;">This Only Works With You</h2>
   <p style="font-size:1.2rem; max-width:750px; margin:1rem auto;">
     We don’t need a hero or a founder to save the day. We need everyday people who believe care is worth building.
@@ -391,7 +391,7 @@
 
 
   <!-- Slide 12: Call to Action -->
-  <section id="slide-12" style="background:#fef7f1; padding:6rem 2rem; text-align:center;">
+ <!-- <section id="slide-12" style="background:#fef7f1; padding:6rem 2rem; text-align:center;">
   <h2 style="font-size:2.5rem; color:#5c3d2e;">Help Us Build The Pup Café</h2>
   <p style="font-size:1.2rem; max-width:700px; margin:1rem auto;">
     Support isn’t just money. It’s advice, skills, space, belief, or just spreading the word. We’re building this with community — not for it.
@@ -497,7 +497,7 @@
 
   animate();
 </script>-->
-<script>
+<!--<script>
   gsap.to(".paw", {
     opacity: 1,
     y: 0,
@@ -581,4 +581,189 @@
 
 
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Pup Café Pitch Deck</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav style="position:fixed; top:0; left:0; right:0; background:#fffaf5; box-shadow:0 1px 6px rgba(0,0,0,0.05); padding:1rem; z-index:100;">
+  <ul style="display:flex; list-style:none; justify-content:center; gap:1.5rem; margin:0; padding:0;">
+    <li><a href="#slide-2">Problem</a></li>
+    <li><a href="#slide-3">Solution</a></li>
+    <li><a href="#slide-4">Startup Needs</a></li>
+    <li><a href="#slide-5">A Day in the Life</a></li>
+    <li><a href="#slide-6">Revenue Model</a></li>
+    <li><a href="#slide-7">Impact</a></li>
+    <li><a href="#slide-8">Future</a></li>
+    <li><a href="#slide-9">Team</a></li>
+    <li><a href="#slide-10">Get Involved</a></li>
+  </ul>
+</nav>
+
+<!-- Slide 1: Intro -->
+<section id="slide-1" style="background-color:#F5EDE0; padding:6rem 2rem; text-align:center;">
+  <h1>🐾 The Pup Café 🐾</h1>
+  <p>A café for dogs, workers & mutual care</p>
+  <p>Created by Hunter Harris & Stephen Barksdale</p>
+  <p>Contact: ThePupCafeIdea@Gmail.com | @ThePupCafeIdea</p>
+</section>
+
+<!-- Slide 2: The Problem -->
+<section id="slide-2" style="background-color:#E8D8C3; padding:6rem 2rem; text-align:center;">
+  <h2>The Problem</h2>
+  <p>Our current system undervalues care for animals, workers, and community.</p>
+  <ul>
+    <li>🐶 3.1M dogs enter US shelters annually</li>
+    <li>👩‍🍳 52% of café workers earn below living wage</li>
+    <li>🏘️ 61% of Gen Z feel lonely weekly</li>
+  </ul>
+</section>
+
+<!-- Slide 3: The Solution -->
+<section id="slide-3" style="background-color:#D9CBB5; padding:6rem 2rem; text-align:center;">
+  <h2>The Pup Café Solution</h2>
+  <p>A full-system alternative built around rescue, dignity, and worker care.</p>
+  <ul>
+    <li>🐾 Immediate Impact: Lessens pressure on kill shelters, provides real worker careers, and ensures daily enrichment for dogs.</li>
+    <li>🌟 Short-Term Goals: Monthly adoption events, popups with local vendors, and a mutual aid fridge.</li>
+    <li>🌱 Long-Term Vision: Flexible profit-sharing, outreach network, and a toolkit to replicate the model.</li>
+  </ul>
+</section>
+
+<!-- Slide 4: Startup Needs -->
+<section id="slide-4" style="background-color:#C2DCAA; padding:6rem 2rem; text-align:center;">
+  <h2>What It Takes to Start</h2>
+  <p>Mapping the path to launch with flexible tiers reflecting real costs and growing community care.</p>
+  <div>
+    <label for="profitSlider">Adjust Profit Distribution:</label>
+    <input type="range" id="profitSlider" name="profitSlider" min="0" max="100" value="50" oninput="updatePieChart(this.value)">
+    <canvas id="profitPieChart" width="400" height="400"></canvas>
+  </div>
+</section>
+
+<!-- Slide 5: A Day in the Life -->
+<section id="slide-5" style="background-color:#B3C9A9; padding:6rem 2rem; text-align:center;">
+  <h2>A Day in the Life</h2>
+  <p>A senior dog naps under a warm window. A barista makes pour-over while chatting with a local artist. Someone drops $5 in the donation jar for vet bills. The air smells like fresh cinnamon and care.</p>
+  <p>Note: In compliance with Texas law, dogs are welcome in designated outdoor dining areas only.</p>
+</section>
+
+<!-- Slide 6: Revenue Model -->
+<section id="slide-6" style="background-color:#A4B996; padding:6rem 2rem; text-align:center;">
+  <h2>Where Revenue Comes From</h2>
+  <ul>
+    <li>☕ Coffee + Food: 60 customers/day × $7 avg ticket</li>
+    <li>🐾 Dog Events: Weekly socials, training clinics, adoption popups</li
+::contentReference[oaicite:15]{index=15}
+ 
+    <li>💖 Community Support: Donation jars, online tips, vet fundraisers</li>
+    <li>👕 Merch & Media: Mugs, shirts, zines, art prints</li>
+    <li>📦 Future Add-ons: Dog day-care, training programs, educational workshops</li>
+  </ul>
+</section>
+
+<!-- Slide 7: Impact -->
+<section id="slide-7" style="background-color:#93A883; padding:6rem 2rem; text-align:center;">
+  <h2>What Impact Looks Like</h2>
+  <p>Every dollar turns into tangible results:</p>
+  <ul>
+    <li>🐶 70+ dogs rescued in first 18 months</li>
+    <li>👩‍🍳 5+ fair-wage jobs created</li>
+    <li>🧺 Monthly mutual aid efforts: food, pet pantry, free vet days</li>
+    <li>🎤 25+ community events and storytelling nights</li>
+  </ul>
+</section>
+
+<!-- Slide 8: Where This Grows -->
+<section id="slide-8" style="background-color:#829870; padding:6rem 2rem; text-align:center;">
+  <h2>Where This Grows From Here</h2>
+  <p>This is a prototype — not a one-off.</p>
+  <ul>
+    <li><strong>Year 1:</strong> Launch in Dallas. Measure, refine, improve.</li>
+    <li><strong>Year 2–3:</strong> Add dog training, storytelling, nonprofit wing.</li>
+    <li><strong>Year 4+:</strong> Replication kit. Start transition to co-op governance.</li>
+  </ul>
+</section>
+
+<!-- Slide 9: Team & Shared Effort -->
+<section id="slide-9" style="background-color:#71875D; padding:6rem 2rem; text-align:center;">
+  <h2>This Isn’t Built Alone</h2>
+  <p>We don’t need a visionary founder. We need everyday people who know care is worth building.</p>
+  <ul>
+    <li>Have you worked in food service? Rescued a dog?</li>
+    <li>Do you believe mutual aid beats burnout?</li>
+    <li>Do you want to help build something slow, kind, and real?</li>
+  </ul>
+</section>
+
+<!-- Slide 10: Call to Action -->
+<section id="slide-10" style="background-color:#61764B; padding:6rem 2rem; text-align:center;">
+  <h2>Help Build The Pup Café</h2>
+  <p>We need money, yes. But also care, skills, support, and belief.</p>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      💸 <strong>Contribute Funding</strong><br>Even $5 helps fund rescue & setup
+    </div>
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      ✍️ <strong>Join the Support Circle</strong><br>Get updates, share, and grow this vision
+    </div>
+    <div style="background:#fff; padding:1rem 2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+      🧠 <strong>Offer Skills or Space</strong><br>Design, dog care, biz advice — all welcome
+    </div>
+  </div>
+  <p style="margin-top:3rem; font-size:1.1rem; font-style:italic;">
+    Sign up. Lend a paw. Help this thing grow.
+  </p>
+  <p style="font-size:1rem; color:#fff;">
+    Contact: <a href="mailto:ThePupCafeIdea@gmail.com" style="color:#fff;">ThePupCafeIdea@gmail.com</a><br>
+    Instagram: <a href="https://instagram.com/thepupcafeidea" target="_blank" style="color:#fff;">@thepupcafeidea</a>
+  </p>
+</section>
+
+<script>
+  // Dynamically adjust pie chart (example only; needs chart library or image logic)
+  function updatePieChart(value) {
+    const canvas = document.getElementById('profitPieChart');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const total = 100;
+    const dogs = parseInt(value);
+    const workers = 30;
+    const community = 100 - (dogs + workers + 1);
+    const founder = 1;
+
+    const slices = [
+      { label: "Dogs", percent: dogs, color: "#9EC17D" },
+      { label: "Workers", percent: workers, color: "#FFADAD" },
+      { label: "Community", percent: community, color: "#FFD6A5" },
+      { label: "Founder", percent: founder, color: "#B0B0B0" }
+    ];
+
+    let startAngle = 0;
+    slices.forEach(slice => {
+      const angle = (slice.percent / 100) * 2 * Math.PI;
+      ctx.beginPath();
+      ctx.moveTo(200, 200);
+      ctx.arc(200, 200, 100, startAngle, startAngle + angle);
+      ctx.fillStyle = slice.color;
+      ctx.fill();
+      startAngle += angle;
+    });
+  }
+
+  // Initialize chart
+  updatePieChart(50);
+</script>
+
+</body>
 </html>
+
