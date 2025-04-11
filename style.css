@@ -149,7 +149,7 @@ strong {
 .fact-block {
   position: relative;
   width: 250px;
-  height: 150px;
+  min-height: 150px;
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
@@ -164,7 +164,7 @@ strong {
   left: 0;
   width: 100%;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .fact.active {
@@ -179,7 +179,7 @@ strong {
 .fact-controls button {
   background: none;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   color: #8a4f3d;
   margin: 0 0.5rem;
