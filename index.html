@@ -301,54 +301,57 @@
   function animate() {
     frame++;
 
-    // Phase 1: Chase
-    if (frame <= 24) {
+    // Side phase — chase starts
+    if (frame <= 25) {
+      // Bouncing vertically
+      const bounceY = frame % 2 === 0 ? 5 : -5;
+
+      // Horizontal movement
+      ball.style.left = `${20 + frame * 2}%`;
+      dog.style.left = `${5 + Math.pow(frame, 0.92)}%`; // dog slightly speeds up
+
+      // Apply vertical bounce only to ball
+      ball.style.transform = `translateY(${bounceY}px) scale(1)`;
+      dog.style.transform = `translateY(0px) scale(1)`;
+
+      // Update frames
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
-      dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png?v=2`;
-
-      const ballLeft = 20 + frame * 2;
-      const dogLeft = 5 + frame * 1.9;
-
-      ball.style.left = `${ballLeft}%`;
-      dog.style.left = `${dogLeft}%`;
-
-      ball.style.transform = `scale(1)`;
-      dog.style.transform = `scale(1)`;
+      dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
     }
 
-    // Phase 2: Shrinking distance
-    if (frame > 24 && frame <= 38) {
+    // Back phase — distance effect
+    if (frame > 25 && frame <= 40) {
+      const scale = 1 - (frame - 25) * 0.04;
+
+      ball.style.left = `${70 + (frame - 25) * 2}%`;
+      dog.style.left = `${68 + (frame - 25) * 2}%`;
+
+      ball.style.transform = `translateY(0px) scale(${scale})`;
+      dog.style.transform = `translateY(0px) scale(${scale})`;
+
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
-
-      const progress = frame - 24;
-      const scale = 1 - progress * 0.035;
-
-      const ballLeft = 68 + progress * 1.8;
-      const dogLeft = 65 + progress * 1.8;
-
-      ball.style.left = `${ballLeft}%`;
-      dog.style.left = `${dogLeft}%`;
-
-      ball.style.transform = `scale(${scale})`;
-      dog.style.transform = `scale(${scale})`;
     }
 
-    if (frame === 39) {
-      ball.style.left = `93%`;
-      dog.style.left = `89%`;
-      ball.style.transform = `scale(0.4)`;
-      dog.style.transform = `scale(0.4)`;
+    // Freeze them at the end
+    if (frame === 41) {
+      ball.style.left = `100%`;
+      dog.style.left = `96%`;
+      ball.style.transform = `translateY(0px) scale(0.3)`;
+      dog.style.transform = `translateY(0px) scale(0.3)`;
     }
 
+    // Frame cycling
     if (frame < 50) {
-      b++; d++;
-      setTimeout(() => requestAnimationFrame(animate), 110);
+      b++;
+      d++;
+      setTimeout(() => requestAnimationFrame(animate), 120);
     }
   }
 
   animate();
 </script>
+
 
 
 
