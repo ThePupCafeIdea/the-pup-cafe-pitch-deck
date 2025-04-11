@@ -71,13 +71,20 @@ strong {
   position: absolute;
   width: 100px;
   height: auto;
-  top: 58%; /* <- Drop it a few ticks */
+  top: 72%; /* Lowered Y position to align with title area */
   transform: translateY(-50%);
-  transition: transform 0.3s ease-out;
   pointer-events: none;
 }
 
+/* Give the dog a higher z-index so it appears in front */
+#dog {
+  z-index: 2;
+}
 
+/* Ball appears underneath dog */
+#ball {
+  z-index: 1;
+}
 
 /* Fade-ins */
 .fade-in-delay {
