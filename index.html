@@ -365,31 +365,31 @@
 
   animate();
 </script>
--->
-<script>
+--><script>
 function nextFact(blockId) {
   const block = document.getElementById(blockId);
   const facts = block.querySelectorAll('.fact');
-  let current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+  const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
   facts[current].classList.remove('active');
-  let next = (current + 1) % facts.length;
+  const next = (current + 1) % facts.length;
   facts[next].classList.add('active');
 }
 
 function prevFact(blockId) {
   const block = document.getElementById(blockId);
   const facts = block.querySelectorAll('.fact');
-  let current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+  const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
   facts[current].classList.remove('active');
-  let prev = (current - 1 + facts.length) % facts.length;
+  const prev = (current - 1 + facts.length) % facts.length;
   facts[prev].classList.add('active');
 }
 
-// Optional auto-rotate every 5 seconds per block
+// Auto-rotate every 6 seconds
 ['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
   setInterval(() => nextFact(blockId), 6000);
 });
 </script>
+
 
 
 </body>
