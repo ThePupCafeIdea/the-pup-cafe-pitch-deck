@@ -514,6 +514,32 @@
   animate();
 </script>-->
 <script>
+  gsap.to(".paw", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.3,
+    duration: 1.2,
+    ease: "power2.out"
+  });
+
+  gsap.from("#main-title", {
+    opacity: 0,
+    scale: 0.9,
+    delay: 1.2,
+    duration: 1.4,
+    ease: "power3.out"
+  });
+
+  gsap.from(".tagline", {
+    opacity: 0,
+    y: 10,
+    delay: 1.6,
+    duration: 1,
+    ease: "power2.out"
+  });
+</script>
+
+<script>
   const facts = {
     dogs: [
       { icon: "🐶", stat: "3.1M", desc: "Dogs enter US shelters every year" },
