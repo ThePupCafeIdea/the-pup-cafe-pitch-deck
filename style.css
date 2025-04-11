@@ -93,21 +93,6 @@ strong {
 }
 
 /* Fade-ins for initial elements */
-.fade-in-delay {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards;
-  animation-delay: 3.2s;
-}
-.fade-in-delay-2 {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards;
-  animation-delay: 3.8s;
-}
-.fade-in-delay-3 {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards;
-  animation-delay: 4.3s;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; }
