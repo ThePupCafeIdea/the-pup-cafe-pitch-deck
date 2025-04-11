@@ -344,6 +344,18 @@
   animate();
 </script>
 -->
+<script>
+  const facts = document.querySelectorAll(".fact-rotator .fact");
+  let current = 0;
+
+  function rotateFacts() {
+    facts[current].classList.remove("active");
+    current = (current + 1) % facts.length;
+    facts[current].classList.add("active");
+  }
+
+  setInterval(rotateFacts, 4000); // rotates every 4 seconds
+</script>
 
 </body>
 </html>
