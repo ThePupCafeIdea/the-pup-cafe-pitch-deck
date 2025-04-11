@@ -17,13 +17,6 @@ section {
   text-align: center;
 }
 
-.title-char {
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-  display: inline-block;
-}
-
-
 h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -61,42 +54,45 @@ strong {
   color: #8a4f3d;
 }
 
-/* Slide Colors */
+/* Background Themes */
 .slide-offwhite {
   background-color: #fffcf7;
 }
 
+/* Title character fade-in (dog reveal trick) */
+.title-char {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  display: inline-block;
+}
+
+/* Intro Animation Setup */
 .intro-animation {
   position: relative;
   width: 100%;
   height: 250px;
-  margin-bottom: 1rem; /* optional tweak */
+  margin-bottom: 1rem;
   pointer-events: none;
 }
 
-/* Shared styles */
 .anim-img {
   position: absolute;
   top: 58%;
   left: 0;
-  width: 80px;       /* Previously 100px — this makes it visibly smaller */
+  width: 80px;
   height: auto;
-  transform: translateY(0) scale(0.85);  /* Overall size reduction */
+  transform: translateY(0) scale(0.85);
   z-index: 1;
 }
 
 #dog {
   z-index: 2;
 }
-
-
 #ball {
   z-index: 1;
 }
 
-
-
-/* Fade-ins */
+/* Fade-ins for initial elements */
 .fade-in-delay {
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
@@ -113,90 +109,98 @@ strong {
   animation-delay: 4.3s;
 }
 
-.fact-rotator {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 3rem auto 0;
-  height: 130px; /* Set height to prevent layout shift */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.fact {
-  position: absolute;
-  width: 100%;
-  padding: 1.5rem;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  text-align: center;
+/* Slide 2: Problem Block Styling */
+.problem-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #5c3d2e;
 }
 
-.fact.active {
-  opacity: 1;
-  z-index: 1;
+.problem-subtext {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: #3b2f2f;
 }
 
-.stat-columns {
+.problem-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-top: 3rem;
 }
 
-.fact-block {
+.problem-card {
   background: #fff;
-  padding: 2rem 1.5rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-  text-align: center;
-  width: 260px;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
   min-height: 200px;
-  position: relative;
-  overflow: hidden;
 }
 
-.fact-slide {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.fact-slide.active {
-  position: relative;
+/* Fact text */
+.stat {
+  min-height: 100px;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
   opacity: 1;
-  transform: translateY(0);
 }
 
-.fact-controls {
-  margin-top: 130px;
+.stat-number {
+  font-size: 1.4rem;
+  color: #8a4f3d;
+  margin-bottom: 0.5rem;
 }
 
-.fact-controls button {
+.stat-desc {
+  font-size: 1rem;
+  color: #3b2f2f;
+}
+
+/* Prev/Next Buttons */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.controls button {
   background: none;
   border: none;
-  color: #8a4f3d;
   font-size: 1.6rem;
   cursor: pointer;
-  margin: 0 0.5rem;
-  transition: color 0.2s ease;
+  color: #8a4f3d;
+  transition: transform 0.2s ease;
+}
+.controls button:hover {
+  transform: scale(1.2);
 }
 
-.fact-controls button:hover {
-  color: #5c3d2e;
+/* Smooth fading */
+.fade-in {
+  animation: fadeInSmooth 0.4s ease-in-out;
 }
 
-
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
