@@ -113,6 +113,32 @@ strong {
   animation-delay: 4.3s;
 }
 
+.fact-rotator {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 3rem auto 0;
+  height: 130px; /* Set height to prevent layout shift */
+}
+
+.fact {
+  position: absolute;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-align: center;
+}
+
+.fact.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
