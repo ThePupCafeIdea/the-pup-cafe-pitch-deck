@@ -138,6 +138,54 @@ strong {
   z-index: 1;
 }
 
+.stat-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.fact-block {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  overflow: hidden;
+}
+
+.fact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.fact.active {
+  opacity: 1;
+  position: relative;
+}
+
+.fact-controls {
+  margin-top: 1.5rem;
+}
+
+.fact-controls button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #8a4f3d;
+  margin: 0 0.5rem;
+}
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
