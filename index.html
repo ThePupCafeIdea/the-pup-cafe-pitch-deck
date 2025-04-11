@@ -50,50 +50,43 @@
 
 
 <!-- Slide 2: The Problem -->
-  <section id="slide-2" style="background:#fef9f6; padding:6rem 2rem; text-align:center;">
-  <h2 style="font-size:2.5rem; color:#5c3d2e; margin-bottom:1rem;">The Problem</h2>
-  <p style="font-size:1.2rem; max-width:700px; margin:0 auto 2rem; line-height:1.6;">
+<section id="slide-2" class="slide-offwhite" style="text-align:center; padding:6rem 2rem;">
+  <h2 class="problem-title">The Problem</h2>
+  <p class="problem-subtext">
     We live in a system that undervalues care: for animals, for workers, and for each other.  
     Loneliness is rising. Dogs are abandoned. Café workers live on poverty wages.
   </p>
 
-  <div class="stat-columns">
-
-    <!-- DOG STATS -->
-    <div class="fact-block" id="dog-block">
-      <div class="fact-slide active">🐶 <strong>3.1M</strong><br>Dogs enter US shelters every year</div>
-      <div class="fact-slide">🐾 <strong>390K</strong><br>Dogs are euthanized annually</div>
-      <div class="fact-slide">🏠 <strong>1 in 5</strong><br>adopted dogs are returned</div>
-      <div class="fact-controls">
-        <button onclick="prevFact('dog-block')">‹</button>
-        <button onclick="nextFact('dog-block')">›</button>
+  <div class="problem-cards">
+    <!-- Dogs -->
+    <div class="problem-card">
+      <div class="stat" id="dogs-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('dogs')">‹</button>
+        <button onclick="nextFact('dogs')">›</button>
       </div>
     </div>
 
-    <!-- WORKER STATS -->
-    <div class="fact-block" id="worker-block">
-      <div class="fact-slide active">💼 <strong>52%</strong><br>of café workers earn below living wage</div>
-      <div class="fact-slide">🧾 <strong>76%</strong><br>lack paid sick leave</div>
-      <div class="fact-slide">🧠 <strong>39%</strong><br>report regular burnout</div>
-      <div class="fact-controls">
-        <button onclick="prevFact('worker-block')">‹</button>
-        <button onclick="nextFact('worker-block')">›</button>
+    <!-- Workers -->
+    <div class="problem-card">
+      <div class="stat" id="workers-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('workers')">‹</button>
+        <button onclick="nextFact('workers')">›</button>
       </div>
     </div>
 
-    <!-- COMMUNITY STATS -->
-    <div class="fact-block" id="community-block">
-      <div class="fact-slide active">😔 <strong>61%</strong><br>of Gen Z feel lonely weekly</div>
-      <div class="fact-slide">📉 <strong>1 in 2</strong><br>have fewer than 3 close friends</div>
-      <div class="fact-slide">❤️ <strong>33%</strong><br>feel isolated often or always</div>
-      <div class="fact-controls">
-        <button onclick="prevFact('community-block')">‹</button>
-        <button onclick="nextFact('community-block')">›</button>
+    <!-- Community -->
+    <div class="problem-card">
+      <div class="stat" id="community-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('community')">‹</button>
+        <button onclick="nextFact('community')">›</button>
       </div>
     </div>
-
   </div>
 </section>
+
 
 
   <!-- Slide 3: The Solution -->
@@ -367,50 +360,57 @@
   animate();
 </script>-->
 <script>
-  function nextFact(blockId) {
-    const block = document.getElementById(blockId);
-    const slides = block.querySelectorAll('.fact-slide');
-    const current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-    slides[current].classList.remove('active');
-    slides[(current + 1) % slides.length].classList.add('active');
+  const facts = {
+    dogs: [
+      { icon: "🐶", stat: "3.1M", desc: "Dogs enter US shelters every year" },
+      { icon: "🏠", stat: "1 in 5", desc: "adopted dogs are returned" },
+      { icon: "💸", stat: "$2B", desc: "spent annually on shelter costs" }
+    ],
+    workers: [
+      { icon: "💼", stat: "52%", desc: "of café workers earn below living wage" },
+      { icon: "🧠", stat: "39%", desc: "report regular burnout" },
+      { icon: "🕒", stat: "28%", desc: "work multiple jobs to survive" }
+    ],
+    community: [
+      { icon: "😔", stat: "61%", desc: "of Gen Z feel lonely weekly" },
+      { icon: "❤️", stat: "33%", desc: "say they feel isolated often or always" },
+      { icon: "📱", stat: "48%", desc: "replace in-person care with online scrolls" }
+    ]
+  };
+
+  const indexes = { dogs: 0, workers: 0, community: 0 };
+
+  function updateFact(category) {
+    const el = document.getElementById(`${category}-stat`);
+    const { icon, stat, desc } = facts[category][indexes[category]];
+    el.classList.remove('fade-in');
+    void el.offsetWidth; // reset animation
+    el.innerHTML = `
+      <div class="stat-number">${icon} <strong>${stat}</strong></div>
+      <div class="stat-desc">${desc}</div>
+    `;
+    el.classList.add('fade-in');
   }
 
-  function prevFact(blockId) {
-    const block = document.getElementById(blockId);
-    const slides = block.querySelectorAll('.fact-slide');
-    const current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-    slides[current].classList.remove('active');
-    slides[(current - 1 + slides.length) % slides.length].classList.add('active');
+  function nextFact(category) {
+    indexes[category] = (indexes[category] + 1) % facts[category].length;
+    updateFact(category);
   }
 
-  // Optional: Auto-rotate each block
-  ['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
-    setInterval(() => nextFact(blockId), 7000);
-  });
-</script>
-<script>
-  function nextFact(blockId) {
-    const block = document.getElementById(blockId);
-    const facts = block.querySelectorAll('.fact');
-    const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
-    facts[current].classList.remove('active');
-    const next = (current + 1) % facts.length;
-    facts[next].classList.add('active');
+  function prevFact(category) {
+    indexes[category] = (indexes[category] - 1 + facts[category].length) % facts[category].length;
+    updateFact(category);
   }
 
-  function prevFact(blockId) {
-    const block = document.getElementById(blockId);
-    const facts = block.querySelectorAll('.fact');
-    const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
-    facts[current].classList.remove('active');
-    const prev = (current - 1 + facts.length) % facts.length;
-    facts[prev].classList.add('active');
-  }
+  // Auto-rotate
+  setInterval(() => {
+    nextFact("dogs");
+    nextFact("workers");
+    nextFact("community");
+  }, 6000);
 
-  // Auto-rotate each section independently
-  ['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
-    setInterval(() => nextFact(blockId), 7000);
-  });
+  // Initial load
+  ["dogs", "workers", "community"].forEach(updateFact);
 </script>
 
 
