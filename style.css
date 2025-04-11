@@ -1,5 +1,5 @@
 /* Global Reset & Typography */
-body {
+/*body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #fffaf5;
@@ -55,19 +55,19 @@ strong {
 }
 
 /* Background Themes */
-.slide-offwhite {
+/*.slide-offwhite {
   background-color: #fffcf7;
 }
 
 /* Title character fade-in (dog reveal trick) */
-.title-char {
+/*.title-char {
   opacity: 0;
   transition: opacity 0.3s ease-in;
   display: inline-block;
 }
 
 /* Intro Animation Setup */
-.intro-animation {
+/*.intro-animation {
   position: relative;
   width: 100%;
   height: 250px;
@@ -94,13 +94,13 @@ strong {
 
 /* Fade-ins for initial elements */
 
-@keyframes fadeIn {
+/*@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 /* Slide 2: Problem Block Styling */
-.problem-title {
+/*.problem-title {
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #5c3d2e;
@@ -136,7 +136,7 @@ strong {
 }
 
 /* Fact text */
-.stat {
+/*.stat {
   min-height: 100px;
   text-align: center;
   transition: opacity 0.3s ease-in-out;
@@ -155,7 +155,7 @@ strong {
 }
 
 /* Prev/Next Buttons */
-.controls {
+/*.controls {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -175,7 +175,7 @@ strong {
 }
 
 /* Smooth fading */
-.fade-in {
+/*.fade-in {
   animation: fadeInSmooth 0.4s ease-in-out;
 }
 /* --- Slide 3: Solution Layout --- */
