@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pup Café Pitch Deck</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Load GSAP -->
+  <!-- GSAP included (optional right now) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
@@ -29,35 +29,17 @@
 
 <!-- Slide 1: Intro -->
 <section id="slide-1" class="slide-offwhite" style="overflow:hidden; position:relative;">
-  <!-- Animated Dog + Ball -->
+
+  <!-- Dog + Ball Animation (temporarily disabled) -->
+  <!--
   <div class="intro-animation">
-  <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" />
-  <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
-</div>
-
-
-
+    <img id="ball" class="anim-img" src="assets/frames/ball/ball-frame1.png" />
+    <img id="dog" class="anim-img" src="assets/frames/dogside/dogside-frame1.png" />
+  </div>
+  -->
 
   <!-- Title -->
-  <h1 id="main-title">
-  <span class="title-char">🐾</span>
-  <span class="title-char"> </span>
-  <span class="title-char">T</span>
-  <span class="title-char">h</span>
-  <span class="title-char">e</span>
-  <span class="title-char"> </span>
-  <span class="title-char">P</span>
-  <span class="title-char">u</span>
-  <span class="title-char">p</span>
-  <span class="title-char"> </span>
-  <span class="title-char">C</span>
-  <span class="title-char">a</span>
-  <span class="title-char">f</span>
-  <span class="title-char">é</span>
-  <span class="title-char"> </span>
-  <span class="title-char">🐾</span>
-</h1>
-
+  <h1 id="main-title" class="fade-in-delay">🐾 The Pup Café 🐾</h1>
   <div class="tagline fade-in-delay-2">a café for dogs, workers & mutual care</div>
   <div class="footer fade-in-delay-3">
     Created by [Your Name] — founder, worker, friend of dogs<br />
@@ -305,7 +287,8 @@
   <!-- KEEP THE REST OF SLIDES AS THEY ARE -->
   <!-- ... Slide 2 through Slide 12 ... -->
 
-  <!-- Animation Script -->
+  <!-- Dog/Ball Animation Script (disabled) -->
+<!--
 <script>
   const ball = document.getElementById("ball");
   const dog = document.getElementById("dog");
@@ -319,28 +302,20 @@
   function animate() {
     frame++;
 
-    // Side phase — chase starts
     if (frame <= 25) {
-      // Bouncing vertically
       const bounceY = frame % 2 === 0 ? 5 : -5;
-
-      // Horizontal movement
       ball.style.left = `${20 + frame * 2}%`;
-      dog.style.left = `${5 + Math.pow(frame, 0.92)}%`; // dog slightly speeds up
+      dog.style.left = `${5 + Math.pow(frame, 0.92)}%`;
 
-      // Apply vertical bounce only to ball
       ball.style.transform = `translateY(${bounceY}px) scale(1)`;
       dog.style.transform = `translateY(0px) scale(1)`;
 
-      // Update frames
       ball.src = `assets/frames/ball/ball-frame${(b % ballFrames) + 1}.png`;
       dog.src = `assets/frames/dogside/dogside-frame${(d % dogSideFrames) + 1}.png`;
     }
 
-    // Back phase — distance effect
     if (frame > 25 && frame <= 40) {
       const scale = 1 - (frame - 25) * 0.04;
-
       ball.style.left = `${70 + (frame - 25) * 2}%`;
       dog.style.left = `${68 + (frame - 25) * 2}%`;
 
@@ -351,7 +326,6 @@
       dog.src = `assets/frames/dogback/dogback-frame${(d % dogBackFrames) + 1}.png`;
     }
 
-    // Freeze them at the end
     if (frame === 41) {
       ball.style.left = `100%`;
       dog.style.left = `96%`;
@@ -359,7 +333,6 @@
       dog.style.transform = `translateY(0px) scale(0.3)`;
     }
 
-    // Frame cycling
     if (frame < 50) {
       b++;
       d++;
@@ -369,8 +342,7 @@
 
   animate();
 </script>
-
-
+-->
 
 </body>
 </html>
