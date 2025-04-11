@@ -56,44 +56,44 @@
     We live in a system that undervalues care: for animals, for workers, and for each other.  
     Loneliness is rising. Dogs are abandoned. Café workers live on poverty wages.
   </p>
+
   <div class="stat-columns">
-  <!-- 🐶 DOG STATS -->
-  <div class="fact-block" id="dog-block">
-    <div class="fact active">🐶 <strong>3.1M</strong><br>Dogs enter US shelters every year</div>
-    <div class="fact">🐾 <strong>390K</strong><br>Dogs are euthanized annually</div>
-    <div class="fact">🏠 <strong>1 in 5</strong><br>adopted dogs are returned</div>
-    <div class="fact-controls">
-      <button onclick="prevFact('dog-block')">⟨</button>
-      <button onclick="nextFact('dog-block')">⟩</button>
+    
+    <!-- 🐶 DOG STATS -->
+    <div class="fact-block" id="dog-block">
+      <div class="fact active">🐶 <strong>3.1M</strong><br>Dogs enter US shelters every year</div>
+      <div class="fact">🐾 <strong>390K</strong><br>Dogs are euthanized annually</div>
+      <div class="fact">🏠 <strong>1 in 5</strong><br>adopted dogs are returned</div>
+      <div class="fact-controls">
+        <button onclick="prevFact('dog-block')">⟨</button>
+        <button onclick="nextFact('dog-block')">⟩</button>
+      </div>
     </div>
-  </div>
 
-  <!-- 💼 WORKER STATS -->
-  <div class="fact-block" id="worker-block">
-    <div class="fact active">💼 <strong>52%</strong><br>of café workers earn below living wage</div>
-    <div class="fact">🧾 <strong>76%</strong><br>of food workers lack paid sick leave</div>
-    <div class="fact">🧠 <strong>39%</strong><br>report regular burnout</div>
-    <div class="fact-controls">
-      <button onclick="prevFact('worker-block')">⟨</button>
-      <button onclick="nextFact('worker-block')">⟩</button>
+    <!-- 💼 WORKER STATS -->
+    <div class="fact-block" id="worker-block">
+      <div class="fact active">💼 <strong>52%</strong><br>of café workers earn below living wage</div>
+      <div class="fact">🧾 <strong>76%</strong><br>of food workers lack paid sick leave</div>
+      <div class="fact">🧠 <strong>39%</strong><br>report regular burnout</div>
+      <div class="fact-controls">
+        <button onclick="prevFact('worker-block')">⟨</button>
+        <button onclick="nextFact('worker-block')">⟩</button>
+      </div>
     </div>
-  </div>
 
-  <!-- 😔 COMMUNITY STATS -->
-  <div class="fact-block" id="community-block">
-    <div class="fact active">😔 <strong>61%</strong><br>of Gen Z feel lonely weekly</div>
-    <div class="fact">📉 <strong>1 in 2</strong><br>adults report having <em>fewer than 3 friends</em></div>
-    <div class="fact">❤️ <strong>33%</strong><br>say they feel isolated "often or always"</div>
-    <div class="fact-controls">
-      <button onclick="prevFact('community-block')">⟨</button>
-      <button onclick="nextFact('community-block')">⟩</button>
+    <!-- 😔 COMMUNITY STATS -->
+    <div class="fact-block" id="community-block">
+      <div class="fact active">😔 <strong>61%</strong><br>of Gen Z feel lonely weekly</div>
+      <div class="fact">📉 <strong>1 in 2</strong><br>adults report fewer than 3 close friends</div>
+      <div class="fact">❤️ <strong>33%</strong><br>say they feel isolated often or always</div>
+      <div class="fact-controls">
+        <button onclick="prevFact('community-block')">⟨</button>
+        <button onclick="nextFact('community-block')">⟩</button>
+      </div>
     </div>
+
   </div>
-</div>
-
-
 </section>
-
 
   <!-- Slide 3: The Solution -->
   <section id="slide-3" style="background:#fdf7f1; padding:6rem 2rem; text-align:center;">
@@ -364,31 +364,32 @@
   }
 
   animate();
-</script>
---><script>
-function nextFact(blockId) {
-  const block = document.getElementById(blockId);
-  const facts = block.querySelectorAll('.fact');
-  const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
-  facts[current].classList.remove('active');
-  const next = (current + 1) % facts.length;
-  facts[next].classList.add('active');
-}
+</script>-->
+<script>
+  function nextFact(blockId) {
+    const block = document.getElementById(blockId);
+    const facts = block.querySelectorAll('.fact');
+    const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+    facts[current].classList.remove('active');
+    const next = (current + 1) % facts.length;
+    facts[next].classList.add('active');
+  }
 
-function prevFact(blockId) {
-  const block = document.getElementById(blockId);
-  const facts = block.querySelectorAll('.fact');
-  const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
-  facts[current].classList.remove('active');
-  const prev = (current - 1 + facts.length) % facts.length;
-  facts[prev].classList.add('active');
-}
+  function prevFact(blockId) {
+    const block = document.getElementById(blockId);
+    const facts = block.querySelectorAll('.fact');
+    const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+    facts[current].classList.remove('active');
+    const prev = (current - 1 + facts.length) % facts.length;
+    facts[prev].classList.add('active');
+  }
 
-// Auto-rotate every 6 seconds
-['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
-  setInterval(() => nextFact(blockId), 6000);
-});
+  // Auto-rotate each section independently
+  ['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
+    setInterval(() => nextFact(blockId), 7000);
+  });
 </script>
+
 
 
 
