@@ -366,17 +366,30 @@
 </script>
 -->
 <script>
-  const facts = document.querySelectorAll(".fact-rotator .fact");
-  let current = 0;
+function nextFact(blockId) {
+  const block = document.getElementById(blockId);
+  const facts = block.querySelectorAll('.fact');
+  let current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+  facts[current].classList.remove('active');
+  let next = (current + 1) % facts.length;
+  facts[next].classList.add('active');
+}
 
-  function rotateFacts() {
-    facts[current].classList.remove("active");
-    current = (current + 1) % facts.length;
-    facts[current].classList.add("active");
-  }
+function prevFact(blockId) {
+  const block = document.getElementById(blockId);
+  const facts = block.querySelectorAll('.fact');
+  let current = Array.from(facts).findIndex(f => f.classList.contains('active'));
+  facts[current].classList.remove('active');
+  let prev = (current - 1 + facts.length) % facts.length;
+  facts[prev].classList.add('active');
+}
 
-  setInterval(rotateFacts, 4000); // rotates every 4 seconds
+// Optional auto-rotate every 5 seconds per block
+['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
+  setInterval(() => nextFact(blockId), 6000);
+});
 </script>
+
 
 </body>
 </html>
