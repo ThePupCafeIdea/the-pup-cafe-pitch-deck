@@ -369,6 +369,28 @@
 <script>
   function nextFact(blockId) {
     const block = document.getElementById(blockId);
+    const slides = block.querySelectorAll('.fact-slide');
+    const current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+    slides[current].classList.remove('active');
+    slides[(current + 1) % slides.length].classList.add('active');
+  }
+
+  function prevFact(blockId) {
+    const block = document.getElementById(blockId);
+    const slides = block.querySelectorAll('.fact-slide');
+    const current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+    slides[current].classList.remove('active');
+    slides[(current - 1 + slides.length) % slides.length].classList.add('active');
+  }
+
+  // Optional: Auto-rotate each block
+  ['dog-block', 'worker-block', 'community-block'].forEach(blockId => {
+    setInterval(() => nextFact(blockId), 7000);
+  });
+</script>
+<script>
+  function nextFact(blockId) {
+    const block = document.getElementById(blockId);
     const facts = block.querySelectorAll('.fact');
     const current = Array.from(facts).findIndex(f => f.classList.contains('active'));
     facts[current].classList.remove('active');
