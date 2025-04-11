@@ -70,17 +70,16 @@ strong {
 /* Shared styles */
 .anim-img {
   position: absolute;
-  width: 100px;
-  height: auto;
-  top: 70%;  /* 🔽 move closer to center line */
-  transform: translateY(-50%);
-  transition: transform 0.3s ease-out;
-  z-index: 1; /* base layer */
+  top: 58%; /* Adjust to align with the title */
+  left: 0;
+  transform: translateY(0);
+  z-index: 1;
 }
 
 #dog {
-  z-index: 2; /* ensure dog appears above ball */
+  z-index: 2; /* Ensure the dog appears above the ball */
 }
+
 
 #ball {
   z-index: 1;
