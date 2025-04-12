@@ -626,6 +626,20 @@ canvas#profitChart {
   margin: 0 auto;
   display: block;
 }
+.tier-links {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tier-links a {
+  color: #8a4f3d;
+  text-decoration: none;
+}
+
+.tier-links a:hover {
+  text-decoration: underline;
+}
 
 
 .fade-in {
