@@ -760,6 +760,7 @@
   </div>
 </section>
 
+
 <section id="slide-8">
   <h2>Capital Ask: Use of Funds</h2>
   <div class="tab-buttons">
@@ -930,6 +931,33 @@
       nextFact("workers");
       nextFact("community");
     }, 6000);
+  });
+</script>
+<script>
+  const ctx = document.getElementById('profitChart').getContext('2d');
+  const profitChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Dogs', 'Workers', 'Community', 'Founder'],
+      datasets: [{
+        data: [50, 30, 15, 5],
+        backgroundColor: ['#9EC17D', '#B7D7A8', '#D6EFC7', '#EAF8DE']
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  function updateChart() {
+    const dogs = parseInt(document.getElementById('dogsSlider').value);
+    const workers = parseInt(document.getElementById('workersSlider').value);
+    const community = parseInt(document.getElementById('communitySlider').value);
+    const founder = parseInt(document.getElementById('founderSlider').value);
+    profitChart.data.datasets[0].data = [dogs, workers, community, founder];
+    profitChart.update();
+  }
+
+  document.querySelectorAll('.chart-controls input').forEach(input => {
+    input.addEventListener('input', updateChart);
   });
 </script>
 
