@@ -297,6 +297,60 @@ body {
   background: #f3fbf0;
   color: #3d392e;
   scroll-behavior: smooth;
+  <script>
+  const facts = {
+    dogs: [
+      { icon: "🐶", stat: "3.1M", desc: "dogs enter US shelters every year" },
+      { icon: "🏠", stat: "1 in 5", desc: "adopted dogs are returned to shelters" },
+      { icon: "💸", stat: "$2B", desc: "spent annually on shelter costs" }
+    ],
+    workers: [
+      { icon: "💼", stat: "52%", desc: "of café workers earn below living wage" },
+      { icon: "🧠", stat: "39%", desc: "report regular burnout" },
+      { icon: "🕒", stat: "28%", desc: "work multiple jobs to survive" }
+    ],
+    community: [
+      { icon: "😔", stat: "61%", desc: "of Gen Z feel lonely weekly" },
+      { icon: "❤️", stat: "33%", desc: "say they feel isolated often or always" },
+      { icon: "📱", stat: "48%", desc: "replace in-person care with online scrolls" }
+    ]
+  };
+
+  const indexes = { dogs: 0, workers: 0, community: 0 };
+
+  function updateFact(category) {
+    const el = document.getElementById(`${category}-stat`);
+    const { icon, stat, desc } = facts[category][indexes[category]];
+    el.classList.remove('fade-in');
+    void el.offsetWidth; // force reflow
+    el.innerHTML = `
+      <div class="stat-number">${icon} <strong>${stat}</strong></div>
+      <div class="stat-desc">${desc}</div>
+    `;
+    el.classList.add('fade-in');
+  }
+
+  function nextFact(category) {
+    indexes[category] = (indexes[category] + 1) % facts[category].length;
+    updateFact(category);
+  }
+
+  function prevFact(category) {
+    indexes[category] = (indexes[category] - 1 + facts[category].length) % facts[category].length;
+    updateFact(category);
+  }
+
+  // Auto-rotate every 6 seconds
+  setInterval(() => {
+    nextFact("dogs");
+    nextFact("workers");
+    nextFact("community");
+  }, 6000);
+
+  // Initialize on load
+  ["dogs", "workers", "community"].forEach(updateFact);
+</script>
+
 }
 
 section {
