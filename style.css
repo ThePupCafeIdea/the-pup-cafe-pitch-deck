@@ -579,21 +579,13 @@ canvas#profitChart {
   padding: 2rem;
   border-radius: 16px;
   width: 280px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s ease;
-  position: relative;
   min-height: 200px;
-}
-
-.stat {
-  min-height: 100px;
-  text-align: center;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
 }
 
 .stat-number {
@@ -611,21 +603,24 @@ canvas#profitChart {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .controls button {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
+  background: #f3fbf0;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
   cursor: pointer;
-  color: #8a4f3d;
-  transition: transform 0.2s ease;
+  color: #3d5a40;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
 }
 
 .controls button:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
+
+
 
 .fade-in {
   animation: fadeInSmooth 0.4s ease-in-out;
