@@ -620,6 +620,12 @@ canvas#profitChart {
   transform: scale(1.15);
 }
 
+canvas#profitChart {
+  width: 50% !important;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
 
 
 .fade-in {
