@@ -412,6 +412,12 @@ nav ul li a {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   text-align: center;
 }
+canvas#profitChart {
+  width: 50% !important;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
 
 .finance-card h3 {
   margin: 0;
