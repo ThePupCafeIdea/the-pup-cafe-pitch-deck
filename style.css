@@ -615,6 +615,14 @@ canvas#profitChart {
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
 }
+.tab-buttons button.active {
+  background-color: #3d5a40;
+  color: #fff;
+}
+
+.tab-buttons button:focus {
+  outline: none;
+}
 
 .controls button:hover {
   transform: scale(1.15);
