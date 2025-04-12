@@ -825,10 +825,6 @@
   </ul>
   <p><em>Fully funded means freedom to build boldly and ethically.</em></p>
 </div>
-
-  <div id="lean" class="funding-tier">Coming soon...</div>
-  <div id="mission" class="funding-tier">Coming soon...</div>
-  <div id="flourish" class="funding-tier">Coming soon...</div>
  <p style="margin-top:2rem; font-size:1rem; text-align:center;">
   📄 <a href="https://example.com/capital-ask-doc" target="_blank">View Full Capital Ask Summary</a><br>
   📊 <a href="https://example.com/financial-evaluation-sheet" target="_blank">View Financial Evaluation Sheet</a>
@@ -962,6 +958,20 @@
   });
 </script>
 
+<script>
+ function showTier(tierId) {
+  document.querySelectorAll('.funding-tier').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.tab-buttons button').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(tierId).style.display = 'block';
+  event.target.classList.add('active');
+}
+
+
+  // Default to Baseline on load
+  document.addEventListener("DOMContentLoaded", () => {
+    showTier("baseline");
+  });
+</script>
 
 </body>
 </html>
