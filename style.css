@@ -289,6 +289,7 @@ strong {
 
 /* === General Reset === */
 /* Global Reset & Typography */
+/* === Global Reset & Typography === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -321,6 +322,11 @@ h2 {
   margin-bottom: 1rem;
 }
 
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
 p {
   font-size: 1.2rem;
   max-width: 700px;
@@ -338,7 +344,6 @@ a {
   text-decoration: none;
   color: #3d5a40;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -347,6 +352,7 @@ strong {
   color: #3d5a40;
 }
 
+/* === Navigation === */
 nav {
   background: #9EC17D;
   padding: 1rem;
@@ -371,20 +377,90 @@ nav ul li a {
   text-decoration: none;
 }
 
+/* === Background Themes === */
 .slide-offwhite {
   background-color: #eaf8de;
 }
 
-.slide-clean {
+.slide-clean,
+.finance-section {
   background-color: #e0f4dc;
   padding: 6rem 2rem;
   text-align: center;
 }
 
-.finance-section {
-  background-color: #e0f4dc;
+/* === Revenue & Finance Boxes === */
+.finance-blocks, .revenue-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
+.finance-card, .revenue-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.finance-card h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: #8a4f3d;
+}
+
+.finance-card p {
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+}
+
+.revenue-box p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* === Solution Blocks === */
+.solution-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-block {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  width: 100%;
+  max-width: 350px;
+  text-align: left;
+}
+
+.solution-block h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #8a4f3d;
+}
+
+.solution-block ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.solution-block li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+}
+
+/* === Profit Chart Sliders === */
 .chart-controls {
   margin-top: 2rem;
 }
@@ -394,6 +470,7 @@ nav ul li a {
   margin: 1rem 0 0.3rem;
 }
 
+/* === Funding Tier Tabs === */
 .tab-buttons {
   display: flex;
   justify-content: center;
