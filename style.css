@@ -290,6 +290,7 @@ strong {
 /* === General Reset === */
 /* Global Reset & Typography */
 /* === Global Reset & Typography === */
+/* === Global Reset & Typography === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -344,6 +345,7 @@ a {
   text-decoration: none;
   color: #3d5a40;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -377,7 +379,7 @@ nav ul li a {
   text-decoration: none;
 }
 
-/* === Background Themes === */
+/* === Slide Backgrounds === */
 .slide-offwhite {
   background-color: #eaf8de;
 }
@@ -389,8 +391,10 @@ nav ul li a {
   text-align: center;
 }
 
-/* === Revenue & Finance Boxes === */
-.finance-blocks, .revenue-columns {
+/* === Content Layout Blocks === */
+.finance-blocks,
+.revenue-columns,
+.solution-columns {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -398,7 +402,9 @@ nav ul li a {
   margin-top: 2rem;
 }
 
-.finance-card, .revenue-box {
+.finance-card,
+.revenue-box,
+.solution-block {
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
@@ -418,27 +424,17 @@ nav ul li a {
   font-weight: bold;
 }
 
+.finance-card small {
+  font-size: 0.9rem;
+  color: #6b4f4f;
+}
+
 .revenue-box p {
   font-size: 0.95rem;
   margin-top: 0.5rem;
 }
 
-/* === Solution Blocks === */
-.solution-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .solution-block {
-  background: #fff;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  width: 100%;
   max-width: 350px;
   text-align: left;
 }
@@ -460,7 +456,7 @@ nav ul li a {
   margin-bottom: 0.7rem;
 }
 
-/* === Profit Chart Sliders === */
+/* === Chart & Sliders === */
 .chart-controls {
   margin-top: 2rem;
 }
@@ -470,7 +466,7 @@ nav ul li a {
   margin: 1rem 0 0.3rem;
 }
 
-/* === Funding Tier Tabs === */
+/* === Tab Buttons & Funding Tiers === */
 .tab-buttons {
   display: flex;
   justify-content: center;
