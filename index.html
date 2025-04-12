@@ -869,41 +869,59 @@
 </section>
 
 <script>
-  const ctx = document.getElementById('profitChart').getContext('2d');
-  const profitChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Dogs', 'Workers', 'Community', 'Founder'],
-      datasets: [{
-        data: [50, 30, 15, 5],
-        backgroundColor: ['#9EC17D', '#B7D7A8', '#D6EFC7', '#EAF8DE']
-      }]
-    },
-    options: { responsive: true }
-  });
+  const facts = {
+    dogs: [
+      { icon: "🐶", stat: "3.1M", desc: "dogs enter US shelters every year" },
+      { icon: "🏠", stat: "1 in 5", desc: "adopted dogs are returned to shelters" },
+      { icon: "💸", stat: "$2B", desc: "spent annually on shelter costs" }
+    ],
+    workers: [
+      { icon: "💼", stat: "52%", desc: "of café workers earn below living wage" },
+      { icon: "🧠", stat: "39%", desc: "report regular burnout" },
+      { icon: "🕒", stat: "28%", desc: "work multiple jobs to survive" }
+    ],
+    community: [
+      { icon: "😔", stat: "61%", desc: "of Gen Z feel lonely weekly" },
+      { icon: "❤️", stat: "33%", desc: "say they feel isolated often or always" },
+      { icon: "📱", stat: "48%", desc: "replace in-person care with online scrolls" }
+    ]
+  };
 
-  function updateChart() {
-    const dogs = parseInt(document.getElementById('dogsSlider').value);
-    const workers = parseInt(document.getElementById('workersSlider').value);
-    const community = parseInt(document.getElementById('communitySlider').value);
-    const founder = parseInt(document.getElementById('founderSlider').value);
-    profitChart.data.datasets[0].data = [dogs, workers, community, founder];
-    profitChart.update();
+  const indexes = { dogs: 0, workers: 0, community: 0 };
+
+  function updateFact(category) {
+    const el = document.getElementById(`${category}-stat`);
+    const { icon, stat, desc } = facts[category][indexes[category]];
+    el.classList.remove('fade-in');
+    void el.offsetWidth; // reset animation
+    el.innerHTML = `
+      <div class="stat-number">${icon} <strong>${stat}</strong></div>
+      <div class="stat-desc">${desc}</div>
+    `;
+    el.classList.add('fade-in');
   }
 
-  document.querySelectorAll('.chart-controls input').forEach(input => {
-    input.addEventListener('input', updateChart);
-  });
-
-  function showTier(tier) {
-    document.querySelectorAll('.funding-tier').forEach(el => el.style.display = 'none');
-    document.getElementById(tier).style.display = 'block';
+  function nextFact(category) {
+    indexes[category] = (indexes[category] + 1) % facts[category].length;
+    updateFact(category);
   }
 
-  showTier('baseline');
-  ["dogs", "workers", "community"].forEach(updateFact);
+  function prevFact(category) {
+    indexes[category] = (indexes[category] - 1 + facts[category].length) % facts[category].length;
+    updateFact(category);
+  }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    ["dogs", "workers", "community"].forEach(updateFact);
+
+    setInterval(() => {
+      nextFact("dogs");
+      nextFact("workers");
+      nextFact("community");
+    }, 6000);
+  });
 </script>
+
 
 </body>
 </html>
