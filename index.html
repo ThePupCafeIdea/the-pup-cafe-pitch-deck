@@ -13,18 +13,21 @@
   <ul>
     <li><a href="#slide-2">Problem</a></li>
     <li><a href="#slide-3">Solution</a></li>
-    <li><a href="#slide-4">Revenue Model</a></li>
-    <li><a href="#slide-5">Financials</a></li>
-    <li><a href="#slide-6">Impact Analysis</a></li>
-    <li><a href="#slide-7">Investment Ask</a></li>
-    <li><a href="#slide-8">Future Vision</a></li>
-    <li><a href="#slide-9">Call to Action</a></li>
+    <li><a href="#slide-4">Model</a></li>
+    <li><a href="#slide-5">Day</a></li>
+    <li><a href="#slide-6">Revenue</a></li>
+    <li><a href="#slide-7">Financials</a></li>
+    <li><a href="#slide-8">Ask</a></li>
+    <li><a href="#slide-9">Impact</a></li>
+    <li><a href="#slide-10">Future</a></li>
+    <li><a href="#slide-11">Team</a></li>
+    <li><a href="#slide-12">CTA</a></li>
   </ul>
 </nav>
 
 <section id="slide-1" class="slide-offwhite">
-  <h1>🐾 The Pup Café 🐾</h1>
-  <div class="tagline">A Café Redefining Care for Dogs, Workers & Communities</div>
+  <h1 id="main-title">🐾 The Pup Café 🐾</h1>
+  <div class="tagline">A café for dogs, workers & mutual care</div>
   <div class="footer">
     Created by Hunter Harris & Stephen Barksdale<br />
     ThePupCafeIdea@Gmail.com | @ThePupCafeIdea
@@ -32,93 +35,425 @@
 </section>
 
 <section id="slide-2" class="slide-offwhite">
-  <h2>The Problem</h2>
-  <p>
-    We live in a system that undervalues care: for animals, for workers, and for each other. Loneliness is rising, dogs are abandoned, and café workers live on poverty wages.
+  <h2 class="problem-title">The Problem</h2>
+  <p class="problem-subtext">
+    We live in a system that undervalues care: for animals, for workers, and for each other. Loneliness is rising. Dogs are abandoned. Café workers live on poverty wages.
   </p>
-  <ul>
-    <li>🐶 670,000 dogs euthanized annually — many could become service animals.</li>
-    <li>💼 52% of café workers earn below a living wage.</li>
-    <li>😔 61% of Gen Z report feeling lonely weekly.</li>
-  </ul>
+
+  <div class="problem-cards">
+    <!-- 🐶 Dogs -->
+    <div class="problem-card">
+      <div class="stat" id="dogs-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('dogs')">‹</button>
+        <button onclick="nextFact('dogs')">›</button>
+      </div>
+    </div>
+
+    <!-- 👷 Workers -->
+    <div class="problem-card">
+      <div class="stat" id="workers-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('workers')">‹</button>
+        <button onclick="nextFact('workers')">›</button>
+      </div>
+    </div>
+
+    <!-- 💬 Community -->
+    <div class="problem-card">
+      <div class="stat" id="community-stat"></div>
+      <div class="controls">
+        <button onclick="prevFact('community')">‹</button>
+        <button onclick="nextFact('community')">›</button>
+      </div>
+    </div>
+  </div>
 </section>
 
+
+
 <section id="slide-3" class="slide-clean">
-  <h2>The Solution</h2>
-  <p>We’re creating a new kind of café where care is at the center of everything — for dogs, workers, and the community.</p>
-  <ul>
-    <li>🐾 Rescue, train, and place dogs at risk of euthanasia.</li>
-    <li>💼 Create fair-wage, equitable jobs for café staff.</li>
-    <li>🌱 Use café profits to fund community support programs.</li>
-  </ul>
+  <h2 class="slide-heading">The Pup Café Solution</h2>
+  <p class="slide-subheading">
+    Not a novelty — a full-system alternative built around rescue, dignity, and worker care.
+  </p>
+  <div class="solution-columns">
+    <div class="solution-block">
+      <h3>🐾 Immediate Impact</h3>
+      <ul>
+  <li>Reduces pressure on kill shelters through direct placement & dog matching</li>
+  <li>Creates real worker careers with built-in pay equity, not tip dependency</li>
+  <li>Provides enrichment, rest, and rotation time for dogs — not performative presence</li>
+  <li>Dignity is built in — no underpaid roles, no burnout-as-default</li>
+</ul>
+
+    </div>
+    <div class="solution-block">
+      <h3>🌟 Short-Term Goals</h3>
+      <ul>
+  <li>Monthly adoption events with municipal + rescue partners</li>
+  <li>Popups with local vendors, healers, and marginalized creatives</li>
+  <li>Mutual aid fridge with café excess + dog supplies</li>
+  <li>Community-led events and uses — care replaces consumption</li>
+</ul>
+
+    </div>
+    <div class="solution-block">
+      <h3>🌱 Long-Term Vision</h3>
+      <ul>
+        <li>Outreach + rescue logistics</li>
+        <li>Service dog training & community education</li>
+        <li>Career pipeline for dog handling + care</li>
+        <li>Toolkit for replicating the model</li>
+      </ul>
+    </div>
+    <div class="solution-block" style="margin-top:3rem;">
+    <h3>🌟 Possible Solutions</h3>
+    <ul>
+  <li>Train dogs for PTSD, diabetes alerting, or ESA work — sold below market cost</li>
+  <li>If a dog isn’t a training fit, we find them a loving home</li>
+  <li>Worker co-design and feedback baked into operations</li>
+  <li>Community space that actively replaces isolation with engagement</li>
+</ul>
+
+  </div>
+  </div>
 </section>
 
 <section id="slide-4" class="slide-clean">
-  <h2>Revenue Model</h2>
-  <p>The Pup Café isn’t just a café — it’s an ecosystem of care:</p>
-  <ul>
-    <li>☕ Coffee & Food: 60 customers/day × $7 avg ticket</li>
-    <li>🐾 Dog Events: Adoption popups, training clinics</li>
-    <li>👕 Merch & Media: Branded goods, art, zines</li>
-    <li>🎓 Training & Placement: Service dog training and adoption</li>
-    <li>💖 Community Support: Donation jars, pay-it-forward programs</li>
-  </ul>
+  <h2>What It Takes to Start</h2>
+  <p>We’ve mapped the path to launch — with flexible tiers that reflect real costs, honest goals, and growing community care.</p>
+  <div class="finance-blocks">
+    <div class="finance-card">
+      <h3>$42,000</h3>
+      <p>Minimum to Open</p>
+      <small>Rent deposit, permits, used equipment, 3-month buffer</small>
+    </div>
+    <div class="finance-card">
+      <h3>$6K / month</h3>
+      <p>Lean Ops Cost</p>
+      <small>Covers payroll, inventory, dog care, and barebones operations</small>
+    </div>
+    <div class="finance-card">
+      <h3>3 Staff</h3>
+      <p>Living Wage Day 1</p>
+      <small>3 core staff at living wage — not tips, not volunteerism</small>
+    </div>
+  </div>
 </section>
 
-<section id="slide-5" class="slide-clean">
-  <h2>Financial Overview</h2>
-  <p>A 3-Year Financial Projection:</p>
-  <ul>
-    <li><strong>Year 1:</strong> $158K Funding - Launch + 3 months runway</li>
-    <li><strong>Year 2:</strong> $220K Revenue - Expansion into training programs</li>
-    <li><strong>Year 3:</strong> $300K Revenue - Full training + service dog placement</li>
-  </ul>
+<section id="slide-5" class="slide-offwhite">
+  <h2>A Day in the Life</h2>
+  <p>
+  A senior dog naps in a shaded dog area while a barista delivers a cortado to the outdoor café tables. Someone drops $5 in the vet bill jar. The air smells like cinnamon and care.
+</p>
+  <div style="display:flex; justify-content:center; gap:2rem; margin-top:2rem;">
+    <div><strong>🎨 Local art on walls</strong></div>
+    <div><strong>🐾 Dogs welcome inside</strong></div>
+    <div><strong>🎶 Community playlist</strong></div>
+  </div>
 </section>
 
 <section id="slide-6" class="slide-clean">
-  <h2>Impact Analysis</h2>
-  <p>How each dollar will make a difference:</p>
-  <ul>
-    <li>🐶 70+ Dogs Rescued in 18 months</li>
-    <li>👷 5 Fair-Wage Jobs Created</li>
-    <li>🧺 Monthly Mutual Aid Pantry</li>
-    <li>🎤 25+ Community Events & Workshops</li>
-  </ul>
+  <h2 class="slide-heading">Where Revenue Comes From</h2>
+  <p class="slide-subheading">A café alone wouldn’t survive. But this isn’t just a café — it’s a whole ecosystem of care:</p>
+  <div class="revenue-columns">
+    <div class="revenue-box">🔄 <strong>Creative Streams</strong><p>Workshops, consults, popups, and community offerings</p></div>
+    <div class="revenue-box">☕ <strong>Coffee + Food</strong><p>60 customers/day × $7 avg ticket</p></div>
+    <div class="revenue-box">🐾 <strong>Dog Events</strong><p>Socials, training clinics, adoption popups</p></div>
+    <div class="revenue-box">💖 <strong>Community Support</strong><p>Donation jars, online tips, pay-it-forward</p></div>
+    <div class="revenue-box">👕 <strong>Merch & Media</strong><p>Mugs, shirts, stories, zines, art</p></div>
+    <div class="revenue-box">
+  🎓 <strong>Dog Training & Placement</strong>
+  <p>Trained for ESA or alert roles — low-cost for need-based adopters</p>
+</div>
+
+  </div>
 </section>
 
-<section id="slide-7" class="slide-clean">
-  <h2>Investment Ask</h2>
-  <p>We’re seeking $158,000 to fully fund the launch. Here’s the breakdown:</p>
-  <ul>
-    <li><strong>Equipment & Furnishings:</strong> $25,000</li>
-    <li><strong>Payroll (6 months):</strong> $54,000</li>
-    <li><strong>Buildout & Lease:</strong> $12,000</li>
-    <li><strong>Marketing & Outreach:</strong> $6,000</li>
-    <li><strong>Community Programs:</strong> $10,000</li>
-    <li><strong>Emergency Fund:</strong> $30,000</li>
-  </ul>
+<section id="slide-7" class="finance-section">
+  <h2>Profit Distribution</h2>
+  <canvas id="profitChart" width="300" height="300"></canvas>
+  <div class="chart-controls">
+    <label>🐶 Dogs: <input type="range" id="dogsSlider" min="0" max="100" value="50"></label>
+    <label>👷 Workers: <input type="range" id="workersSlider" min="0" max="100" value="30"></label>
+    <label>🌍 Community: <input type="range" id="communitySlider" min="0" max="100" value="15"></label>
+    <label>👤 Founder: <input type="range" id="founderSlider" min="0" max="100" value="5"></label>
+  </div>
+<p style="font-size: 0.9rem; margin-top: 1rem;">
+  Default split reflects a mission-focused model — but every café can customize it.
+</p>
 </section>
 
-<section id="slide-8" class="slide-clean">
-  <h2>Future Vision</h2>
-  <p>The Pup Café isn’t just a business — it’s a replicable model of mutual care:</p>
-  <ul>
-    <li><strong>Year 1:</strong> Build community, refine operations, document model.</li>
-    <li><strong>Year 2-3:</strong> Expand training programs, launch nonprofit wing.</li>
-    <li><strong>Year 4+:</strong> Develop replication toolkit, explore co-op model.</li>
-  </ul>
+
+
+<section id="slide-8">
+  <h2>Capital Ask: Use of Funds</h2>
+  <div class="tab-buttons">
+    <button onclick="showTier('baseline')">🟤 Baseline</button>
+    <button onclick="showTier('lean')">🟢 Lean Launch</button>
+    <button onclick="showTier('mission')">🔵 Mission-Fueled</button>
+    <button onclick="showTier('flourish')">🟣 Fully Funded</button>
+  </div>
+  
+  <div id="baseline" class="funding-tier">
+    <h3>🟤 Baseline Survival — $54,000</h3>
+    <ul>
+      <li><strong>Rent Deposit:</strong> $5,000</li>
+      <li><strong>Used Equipment:</strong> $8,000</li>
+      <li><strong>Initial Payroll (2 mo):</strong> $18,000</li>
+      <li><strong>Stock & Supplies:</strong> $3,500</li>
+      <li><strong>Permits & Legal:</strong> $1,000</li>
+      <li><strong>Marketing:</strong> $500</li>
+      <li><strong>Emergency Buffer:</strong> $6,000</li>
+    </ul>
+    <p><em>This covers the bare essentials to open and survive for the first stretch while building trust and testing systems.</em></p>
+  </div>
+
+  <div id="lean" class="funding-tier">
+    <h3>🟢 Lean & Grateful — $71,000</h3>
+    <ul>
+      <li><strong>Rent Deposit:</strong> $5,000</li>
+      <li><strong>Equipment:</strong> $12,000</li>
+      <li><strong>Initial Payroll (3 mo):</strong> $27,000</li>
+      <li><strong>Ingredients & Stock:</strong> $4,500</li>
+      <li><strong>Permits & Legal:</strong> $1,200</li>
+      <li><strong>Marketing & Branding:</strong> $1,500</li>
+      <li><strong>Emergency Buffer:</strong> $10,000</li>
+    </ul>
+    <p><em>This level gives us breathing room to operate ethically and sustain through Year 1.</em></p>
+  </div>
+
+  <div id="mission" class="funding-tier">
+    <h3>🔵 Mission Momentum — $111,000</h3>
+    <ul>
+      <li><strong>Rent & Buildout:</strong> $7,000</li>
+      <li><strong>Equipment + Aesthetic:</strong> $20,000</li>
+      <li><strong>Payroll (5 mo):</strong> $45,000</li>
+      <li><strong>Stock & Vendor Setup:</strong> $6,000</li>
+      <li><strong>Licensing & Insurance:</strong> $2,000</li>
+      <li><strong>Marketing + Events:</strong> $4,000</li>
+      <li><strong>Community Fund Buffer:</strong> $15,000</li>
+      <li><strong>Emergency Runway:</strong> $20,000</li>
+    </ul>
+    <p><em>This level launches our full mission and visibility — not just survival.</em></p>
+  </div>
+
+  <div id="flourish" class="funding-tier">
+    <h3>🟣 Fully Funded Launch — $158,000</h3>
+    <ul>
+      <li><strong>Full Buildout + Lease:</strong> $12,000</li>
+      <li><strong>Best-In-Class Equipment:</strong> $25,000</li>
+      <li><strong>Payroll (6 mo):</strong> $54,000</li>
+      <li><strong>Inventory + Stock:</strong> $7,500</li>
+      <li><strong>Full Legal + Insurance:</strong> $3,000</li>
+      <li><strong>Community Programs:</strong> $10,000</li>
+      <li><strong>Marketing & Outreach:</strong> $6,000</li>
+      <li><strong>Emergency + Vision Fund:</strong> $30,000</li>
+    </ul>
+    <p><em>Fully funded means freedom to build boldly and ethically.</em></p>
+  </div>
+</section>
+
+<section id="slide-9" class="finance-section">
+  <h2>Investor Ask — Fully Funded Launch</h2>
+  <h3>$158,000 Investor Ask</h3>
+  <p>This amount allows us to execute a full launch, covering equipment, payroll, community programs, and contingency funds to ensure a stable, ethical, and impactful first year of operations.</p>
 </section>
 
 <section id="slide-9" class="slide-clean">
-  <h2>Join Us in Building The Pup Café</h2>
-  <p>Support isn’t just money. It’s advice, skills, and belief in a new way to care.</p>
-  <ul>
-    <li>💸 <strong>Invest or Donate</strong> - Fuel the care economy</li>
-    <li>📢 <strong>Spread the Word</strong> - Share our story</li>
-    <li>🧰 <strong>Offer Expertise or Space</strong> - Help us grow</li>
-  </ul>
-  <p>Contact: <a href="mailto:ThePupCafeIdea@gmail.com">ThePupCafeIdea@gmail.com</a></p>
+  <h2>Startup Cost Analysis</h2>
+  <div class="cost-columns">
+    <div class="cost-block">
+      <h3>Pre-Launch Costs</h3>
+      <ul>
+        <li><strong>Small Fenced Dog-Park:</strong> $4,700</li>
+        <li><strong>Minimal Build-Out:</strong> $5,000</li>
+        <li><strong>Equipment & Furnishings:</strong> $25,000</li>
+        <li><strong>Staff Dog-Handling Training:</strong> $2,000</li>
+        <li><strong>Website & Branding:</strong> $2,000</li>
+        <li><strong>Legal & Permits:</strong> $2,000</li>
+        <li><strong>Initial Inventory:</strong> $2,000</li>
+        <li><strong>Marketing:</strong> $3,000</li>
+      </ul>
+      <p><strong>Total Startup Costs:</strong> $48,700</p>
+    </div>
+
+    <div class="cost-block">
+      <h3>Operating Expenses (Monthly)</h3>
+      <ul>
+        <li><strong>Rent/Lease:</strong> $6,000 - $6,400</li>
+        <li><strong>Wages & Payroll Taxes:</strong> $8,000 - $8,200</li>
+        <li><strong>Utilities:</strong> $2,000</li>
+        <li><strong>Insurance:</strong> $2,000</li>
+        <li><strong>Inventory Replenishment:</strong> $2,000 - $2,500</li>
+        <li><strong>Marketing & Outreach:</strong> $500 - $1,000</li>
+        <li><strong>Miscellaneous Supplies:</strong> $400 - $500</li>
+      </ul>
+      <p><strong>Total Operating Expenses:</strong> $19,700 - $20,500</p>
+    </div>
+
+    <div class="cost-block">
+      <h3>Research & Development</h3>
+      <ul>
+        <li><strong>Menu Prototyping & Testing:</strong> $5,000</li>
+      </ul>
+      <p><strong>Total Annual Research & Development:</strong> $5,000</p>
+    </div>
+
+    <div class="cost-block">
+      <h3>Capital Needed</h3>
+      <ul>
+        <li><strong>Self Financing:</strong> $20,000</li>
+        <li><strong>Bank Loan:</strong> $100,000</li>
+        <li><strong>Investor:</strong> $158,664</li>
+      </ul>
+      <p><strong>Total Capital Needed:</strong> $278,664</p>
+    </div>
+  </div>
 </section>
+
+<section id="slide-10" class="slide-offwhite">
+  <h2>What Impact Looks Like</h2>
+  <p>Every dollar translates into direct outcomes — for dogs, for workers, and for our community.</p>
+  <div class="finance-blocks">
+    <div class="finance-card">🐾 <strong>70+ Dogs Rescued</strong><br><small>in 18 months</small></div>
+    <div class="finance-card">👩‍🍳 <strong>5 Fair-Wage Jobs</strong><br><small>with profit share</small></div>
+    <div class="finance-card">🧺 <strong>Monthly Mutual Aid</strong><br><small>pantry, clinics, support</small></div>
+    <div class="finance-card">🎤 <strong>25+ Events</strong><br><small>dog care, storytelling</small></div>
+  </div>
+</section>
+
+<section id="slide-11" class="slide-clean">
+  <h2>Where This Grows From Here</h2>
+  <p>The Pup Café is a prototype — not a one-off. Our long-term goal: build a replicable model of mutual care.</p>
+  <div class="solution-columns">
+    <div class="solution-block"><strong>Year 1</strong><br>Launch in Dallas. Track impact. Refine model.</div>
+    <div class="solution-block"><strong>Year 2–3</strong><br>Dog training. Nonprofit wing. Storytelling.</div>
+    <div class="solution-block"><strong>Year 4+</strong><br>Toolkit. Replication. Co-op transition.</div>
+  </div>
+</section>
+
+<section id="slide-12" class="slide-offwhite">
+  <h2>This Only Works With You</h2>
+  <p>We don’t need a hero or founder. We need everyday people who believe care is worth building.</p>
+  <div class="finance-blocks">
+    <div class="finance-card">🐶 <strong>You’ve rescued a dog</strong></div>
+    <div class="finance-card">☕ <strong>You’ve worked service</strong></div>
+    <div class="finance-card">🧠 <strong>You know it could be better</strong></div>
+  </div>
+</section>
+
+<section id="slide-13" class="slide-clean">
+  <h2>Help Us Build The Pup Café</h2>
+  <p>Support isn’t just money. It’s advice, skills, space, belief, or spreading the word. We’re building this with community — not for it.</p>
+  <div class="finance-blocks">
+    <div class="finance-card">💸 <strong>Invest or Donate</strong><br>Fuel the care economy</div>
+    <div class="finance-card">📢 <strong>Sign & Share</strong><br>Invite others</div>
+    <div class="finance-card">🧰 <strong>Offer Skills or Space</strong><br>We'll reach out</div>
+  </div>
+  <p style="margin-top:2rem;"><strong>Contact:</strong> <a href="mailto:ThePupCafeIdea@gmail.com">ThePupCafeIdea@gmail.com</a><br>
+    <strong>Instagram:</strong> <a href="https://instagram.com/thepupcafeidea">@thepupcafeidea</a>
+  </p>
+</section>
+
+<script>
+  const facts = {
+    dogs: [
+  { icon: "🐶", stat: "3.1M", desc: "dogs enter US shelters every year" },
+  { icon: "☠️", stat: "670,000", desc: "dogs are euthanized annually — many could become service animals" },
+  { icon: "❤️‍🩹", stat: "Both", desc: "Dogs who could help with the rising rates of people with diabetes, PTSD, and isolation; instead are being euthanized at shocking speeds" }
+],
+
+
+    workers: [
+      { icon: "💼", stat: "52%", desc: "of café workers earn below living wage" },
+      { icon: "🧠", stat: "39%", desc: "report regular burnout" },
+      { icon: "🕒", stat: "28%", desc: "work multiple jobs to survive" }
+    ],
+    community: [
+      { icon: "😔", stat: "61%", desc: "of Gen Z feel lonely weekly" },
+      { icon: "❤️", stat: "33%", desc: "say they feel isolated often or always" },
+      { icon: "📱", stat: "48%", desc: "replace in-person care with online scrolls" }
+    ]
+  };
+
+  const indexes = { dogs: 0, workers: 0, community: 0 };
+
+  function updateFact(category) {
+    const el = document.getElementById(`${category}-stat`);
+    const { icon, stat, desc } = facts[category][indexes[category]];
+    el.classList.remove('fade-in');
+    void el.offsetWidth; // reset animation
+    el.innerHTML = `
+      <div class="stat-number">${icon} <strong>${stat}</strong></div>
+      <div class="stat-desc">${desc}</div>
+    `;
+    el.classList.add('fade-in');
+  }
+
+  function nextFact(category) {
+    indexes[category] = (indexes[category] + 1) % facts[category].length;
+    updateFact(category);
+  }
+
+  function prevFact(category) {
+    indexes[category] = (indexes[category] - 1 + facts[category].length) % facts[category].length;
+    updateFact(category);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    ["dogs", "workers", "community"].forEach(updateFact);
+
+    setInterval(() => {
+      nextFact("dogs");
+      nextFact("workers");
+      nextFact("community");
+    }, 6000);
+  });
+</script>
+<script>
+  const ctx = document.getElementById('profitChart').getContext('2d');
+  const profitChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Dogs', 'Workers', 'Community', 'Founder'],
+      datasets: [{
+        data: [50, 30, 15, 5],
+        backgroundColor: ['#9EC17D', '#B7D7A8', '#D6EFC7', '#EAF8DE']
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  function updateChart() {
+    const dogs = parseInt(document.getElementById('dogsSlider').value);
+    const workers = parseInt(document.getElementById('workersSlider').value);
+    const community = parseInt(document.getElementById('communitySlider').value);
+    const founder = parseInt(document.getElementById('founderSlider').value);
+    profitChart.data.datasets[0].data = [dogs, workers, community, founder];
+    profitChart.update();
+  }
+
+  document.querySelectorAll('.chart-controls input').forEach(input => {
+    input.addEventListener('input', updateChart);
+  });
+</script>
+
+<script>
+ function showTier(tierId) {
+  document.querySelectorAll('.funding-tier').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.tab-buttons button').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(tierId).style.display = 'block';
+  event.target.classList.add('active');
+}
+
+
+  // Default to Baseline on load
+  document.addEventListener("DOMContentLoaded", () => {
+    showTier("baseline");
+  });
+</script>
 
 </body>
 </html>
